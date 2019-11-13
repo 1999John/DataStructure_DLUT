@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="workPlace"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/C++project/workPlace/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="workPlace">
+				<Option output="E:/C++project/workPlace/cmake-build-debug/workPlace.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/C++project/workPlace/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/mingw32"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/backward"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/../../../../include"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 workPlace"/>
+					<CompileFile command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="workPlace/fast">
+				<Option output="E:/C++project/workPlace/cmake-build-debug/workPlace.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/C++project/workPlace/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/mingw32"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/backward"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/../../../../include"/>
+					<Add directory="F:/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 workPlace/fast"/>
+					<CompileFile command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/C++project/workPlace/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/C++project/workPlace/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/CodeBlocks/MinGW/bin/mingw32-make.exe -f &quot;E:/C++project/workPlace/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/C++project/workPlace/ACircleQueue.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/CircleDoubleList.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/CircleList.cpp">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/CircleList.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/CircleQueue.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/Dlist.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/MyListNode.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/binarytree.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/main.cpp">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/singleList.cpp">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/singleList.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
