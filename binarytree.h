@@ -74,7 +74,7 @@ struct BinaryTree {
 
     //递归遍历先序遍历二叉树
     void preorder(TreeNode<T> *node) {
-        if (node) {
+        if(node) {
             visit(node);
             preorder(node->leftChild);
             preorder(node->rightChild);
@@ -83,7 +83,7 @@ struct BinaryTree {
 
     //递归中序遍历二叉树
     void inorder(TreeNode<T> *node) {
-        if (node) {
+        if(node) {
             inorder(node->leftChild);
             visit(node);
             inorder(node->rightChild);
@@ -92,10 +92,70 @@ struct BinaryTree {
 
     //递归后序遍历二叉树
     void postorder(TreeNode<T> *node) {
-        if (node) {
+        if(node) {
             postorder(node->leftChild);
             postorder(node->rightChild);
             visit(node);
+        }
+    }
+
+    void preOrder() {
+        using std::stack;
+
+        stack<TreeNode<T>*> st;
+        TreeNode<T>* pointer = root;
+        while(pointer||!st.empty()) {
+            if(pointer) {
+                visit(pointer);
+                if(pointer->rightChild){
+                    st.push(pointer->rightChild);
+                }
+                pointer = pointer->leftChild;
+            } else{
+                pointer = st.top();
+                st.pop();
+            }
+        }
+    }
+
+    void inOrder() {
+        using std::stack;
+
+        stack<TreeNode<T>*> st;
+        TreeNode<T>* pointer = root;
+
+        while(pointer||!st.empty()) {
+            if(pointer) {
+                st.push(pointer);
+                pointer = pointer->leftChild;
+            } else{
+                pointer = st.top();
+                visit(pointer);
+                pointer = pointer->rightChild;
+                st.pop();
+            }
+        }
+    }
+
+    void postOrder() {
+
+    }
+
+    void leveOrder() {
+        using std::queue;
+
+        queue<TreeNode<T>*> qu;
+
+        qu.push(root);
+
+        while(!qu.empty()) {
+            TreeNode<T>* pointer = qu.front();
+            visit(pointer);
+            qu.pop();
+            if(pointer->leftChild)
+                qu.push(pointer->leftChild);
+            if(pointer->rightChild)
+                qu.push(pointer->rightChild);
         }
     }
 };

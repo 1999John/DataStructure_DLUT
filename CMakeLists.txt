@@ -3,4 +3,4 @@ project(workPlace)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(workPlace main.cpp binarytree.h Dlist.h singleList.cpp singleList.h CircleList.cpp CircleList.h MyListNode.h CircleQueue.h CircleDoubleList.h ACircleQueue.h)
+add_executable(workPlace main.cpp binarytree.h LinearTable/Dlist.h LinearTable/singleList.cpp LinearTable/singleList.h LinearTable/CircleList.cpp LinearTable/CircleList.h LinearTable/MyListNode.h LinearTable/CircleQueue.h LinearTable/CircleDoubleList.h LinearTable/ACircleQueue.h BinaryTree/SearchTree.h BinaryTree/ThreadNode.h LinearTable/LinearTable.h BinaryTree/BinaryTree.h BinaryTree/RLNode.h BinaryTree/BinaryTree.cpp)

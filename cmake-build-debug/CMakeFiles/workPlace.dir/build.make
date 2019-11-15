@@ -69,49 +69,64 @@ CMakeFiles/workPlace.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/main.cpp.s"
 	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\main.cpp -o CMakeFiles\workPlace.dir\main.cpp.s
 
-CMakeFiles/workPlace.dir/singleList.cpp.obj: CMakeFiles/workPlace.dir/flags.make
-CMakeFiles/workPlace.dir/singleList.cpp.obj: ../singleList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/workPlace.dir/singleList.cpp.obj"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\workPlace.dir\singleList.cpp.obj -c E:\C++project\workPlace\singleList.cpp
+CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj: CMakeFiles/workPlace.dir/flags.make
+CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj: ../LinearTable/singleList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\workPlace.dir\LinearTable\singleList.cpp.obj -c E:\C++project\workPlace\LinearTable\singleList.cpp
 
-CMakeFiles/workPlace.dir/singleList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/workPlace.dir/singleList.cpp.i"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\C++project\workPlace\singleList.cpp > CMakeFiles\workPlace.dir\singleList.cpp.i
+CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.i"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\C++project\workPlace\LinearTable\singleList.cpp > CMakeFiles\workPlace.dir\LinearTable\singleList.cpp.i
 
-CMakeFiles/workPlace.dir/singleList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/singleList.cpp.s"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\singleList.cpp -o CMakeFiles\workPlace.dir\singleList.cpp.s
+CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.s"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\LinearTable\singleList.cpp -o CMakeFiles\workPlace.dir\LinearTable\singleList.cpp.s
 
-CMakeFiles/workPlace.dir/CircleList.cpp.obj: CMakeFiles/workPlace.dir/flags.make
-CMakeFiles/workPlace.dir/CircleList.cpp.obj: ../CircleList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/workPlace.dir/CircleList.cpp.obj"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\workPlace.dir\CircleList.cpp.obj -c E:\C++project\workPlace\CircleList.cpp
+CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj: CMakeFiles/workPlace.dir/flags.make
+CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj: ../LinearTable/CircleList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\workPlace.dir\LinearTable\CircleList.cpp.obj -c E:\C++project\workPlace\LinearTable\CircleList.cpp
 
-CMakeFiles/workPlace.dir/CircleList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/workPlace.dir/CircleList.cpp.i"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\C++project\workPlace\CircleList.cpp > CMakeFiles\workPlace.dir\CircleList.cpp.i
+CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.i"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\C++project\workPlace\LinearTable\CircleList.cpp > CMakeFiles\workPlace.dir\LinearTable\CircleList.cpp.i
 
-CMakeFiles/workPlace.dir/CircleList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/CircleList.cpp.s"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\CircleList.cpp -o CMakeFiles\workPlace.dir\CircleList.cpp.s
+CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.s"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\LinearTable\CircleList.cpp -o CMakeFiles\workPlace.dir\LinearTable\CircleList.cpp.s
+
+CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj: CMakeFiles/workPlace.dir/flags.make
+CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj: ../BinaryTree/BinaryTree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\workPlace.dir\BinaryTree\BinaryTree.cpp.obj -c E:\C++project\workPlace\BinaryTree\BinaryTree.cpp
+
+CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.i"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\C++project\workPlace\BinaryTree\BinaryTree.cpp > CMakeFiles\workPlace.dir\BinaryTree\BinaryTree.cpp.i
+
+CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.s"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\BinaryTree\BinaryTree.cpp -o CMakeFiles\workPlace.dir\BinaryTree\BinaryTree.cpp.s
 
 # Object files for target workPlace
 workPlace_OBJECTS = \
 "CMakeFiles/workPlace.dir/main.cpp.obj" \
-"CMakeFiles/workPlace.dir/singleList.cpp.obj" \
-"CMakeFiles/workPlace.dir/CircleList.cpp.obj"
+"CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj" \
+"CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj" \
+"CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj"
 
 # External object files for target workPlace
 workPlace_EXTERNAL_OBJECTS =
 
 workPlace.exe: CMakeFiles/workPlace.dir/main.cpp.obj
-workPlace.exe: CMakeFiles/workPlace.dir/singleList.cpp.obj
-workPlace.exe: CMakeFiles/workPlace.dir/CircleList.cpp.obj
+workPlace.exe: CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj
+workPlace.exe: CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj
+workPlace.exe: CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj
 workPlace.exe: CMakeFiles/workPlace.dir/build.make
 workPlace.exe: CMakeFiles/workPlace.dir/linklibs.rsp
 workPlace.exe: CMakeFiles/workPlace.dir/objects1.rsp
 workPlace.exe: CMakeFiles/workPlace.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable workPlace.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable workPlace.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\workPlace.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

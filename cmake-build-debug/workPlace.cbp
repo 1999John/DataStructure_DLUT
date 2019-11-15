@@ -80,37 +80,55 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/C++project/workPlace/ACircleQueue.h">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/BinaryTree.cpp">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/CircleDoubleList.h">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/BinaryTree.h">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/CircleList.cpp">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/RLNode.h">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/CircleList.h">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/SearchTree.h">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/CircleQueue.h">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/ThreadNode.h">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/Dlist.h">
+		<Unit filename="E:/C++project/workPlace/LinearTable/ACircleQueue.h">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/MyListNode.h">
+		<Unit filename="E:/C++project/workPlace/LinearTable/CircleDoubleList.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/CircleList.cpp">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/CircleList.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/CircleQueue.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/Dlist.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/LinearTable.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/MyListNode.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/singleList.cpp">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/LinearTable/singleList.h">
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/binarytree.h">
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/main.cpp">
-			<Option target="workPlace"/>
-		</Unit>
-		<Unit filename="E:/C++project/workPlace/singleList.cpp">
-			<Option target="workPlace"/>
-		</Unit>
-		<Unit filename="E:/C++project/workPlace/singleList.h">
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/CMakeLists.txt">

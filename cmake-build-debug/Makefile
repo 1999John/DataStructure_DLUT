@@ -122,32 +122,86 @@ workPlace/fast:
 	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/build
 .PHONY : workPlace/fast
 
-CircleList.obj: CircleList.cpp.obj
+BinaryTree/BinaryTree.obj: BinaryTree/BinaryTree.cpp.obj
 
-.PHONY : CircleList.obj
+.PHONY : BinaryTree/BinaryTree.obj
 
 # target to build an object file
-CircleList.cpp.obj:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/CircleList.cpp.obj
-.PHONY : CircleList.cpp.obj
+BinaryTree/BinaryTree.cpp.obj:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj
+.PHONY : BinaryTree/BinaryTree.cpp.obj
 
-CircleList.i: CircleList.cpp.i
+BinaryTree/BinaryTree.i: BinaryTree/BinaryTree.cpp.i
 
-.PHONY : CircleList.i
+.PHONY : BinaryTree/BinaryTree.i
 
 # target to preprocess a source file
-CircleList.cpp.i:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/CircleList.cpp.i
-.PHONY : CircleList.cpp.i
+BinaryTree/BinaryTree.cpp.i:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.i
+.PHONY : BinaryTree/BinaryTree.cpp.i
 
-CircleList.s: CircleList.cpp.s
+BinaryTree/BinaryTree.s: BinaryTree/BinaryTree.cpp.s
 
-.PHONY : CircleList.s
+.PHONY : BinaryTree/BinaryTree.s
 
 # target to generate assembly for a file
-CircleList.cpp.s:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/CircleList.cpp.s
-.PHONY : CircleList.cpp.s
+BinaryTree/BinaryTree.cpp.s:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.s
+.PHONY : BinaryTree/BinaryTree.cpp.s
+
+LinearTable/CircleList.obj: LinearTable/CircleList.cpp.obj
+
+.PHONY : LinearTable/CircleList.obj
+
+# target to build an object file
+LinearTable/CircleList.cpp.obj:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj
+.PHONY : LinearTable/CircleList.cpp.obj
+
+LinearTable/CircleList.i: LinearTable/CircleList.cpp.i
+
+.PHONY : LinearTable/CircleList.i
+
+# target to preprocess a source file
+LinearTable/CircleList.cpp.i:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.i
+.PHONY : LinearTable/CircleList.cpp.i
+
+LinearTable/CircleList.s: LinearTable/CircleList.cpp.s
+
+.PHONY : LinearTable/CircleList.s
+
+# target to generate assembly for a file
+LinearTable/CircleList.cpp.s:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.s
+.PHONY : LinearTable/CircleList.cpp.s
+
+LinearTable/singleList.obj: LinearTable/singleList.cpp.obj
+
+.PHONY : LinearTable/singleList.obj
+
+# target to build an object file
+LinearTable/singleList.cpp.obj:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj
+.PHONY : LinearTable/singleList.cpp.obj
+
+LinearTable/singleList.i: LinearTable/singleList.cpp.i
+
+.PHONY : LinearTable/singleList.i
+
+# target to preprocess a source file
+LinearTable/singleList.cpp.i:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.i
+.PHONY : LinearTable/singleList.cpp.i
+
+LinearTable/singleList.s: LinearTable/singleList.cpp.s
+
+.PHONY : LinearTable/singleList.s
+
+# target to generate assembly for a file
+LinearTable/singleList.cpp.s:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.s
+.PHONY : LinearTable/singleList.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -176,33 +230,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-singleList.obj: singleList.cpp.obj
-
-.PHONY : singleList.obj
-
-# target to build an object file
-singleList.cpp.obj:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/singleList.cpp.obj
-.PHONY : singleList.cpp.obj
-
-singleList.i: singleList.cpp.i
-
-.PHONY : singleList.i
-
-# target to preprocess a source file
-singleList.cpp.i:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/singleList.cpp.i
-.PHONY : singleList.cpp.i
-
-singleList.s: singleList.cpp.s
-
-.PHONY : singleList.s
-
-# target to generate assembly for a file
-singleList.cpp.s:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/singleList.cpp.s
-.PHONY : singleList.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -212,15 +239,18 @@ help:
 	@echo ... workPlace
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... CircleList.obj
-	@echo ... CircleList.i
-	@echo ... CircleList.s
+	@echo ... BinaryTree/BinaryTree.obj
+	@echo ... BinaryTree/BinaryTree.i
+	@echo ... BinaryTree/BinaryTree.s
+	@echo ... LinearTable/CircleList.obj
+	@echo ... LinearTable/CircleList.i
+	@echo ... LinearTable/CircleList.s
+	@echo ... LinearTable/singleList.obj
+	@echo ... LinearTable/singleList.i
+	@echo ... LinearTable/singleList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... singleList.obj
-	@echo ... singleList.i
-	@echo ... singleList.s
 .PHONY : help
 
 

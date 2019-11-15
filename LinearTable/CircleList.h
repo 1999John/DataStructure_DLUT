@@ -10,12 +10,13 @@
 
 using namespace std;
 
-
+namespace LinearTable {
 class CircleList {
-private:
+    private:
     MyListNode *head;
     MyListNode *tail;
-public:
+    public:
+
     CircleList();
 
     void createList(int value);
@@ -24,6 +25,6 @@ public:
 
     void display();
 };
-
+}
 
 #endif //WORKPLACE_CIRCLELIST_H

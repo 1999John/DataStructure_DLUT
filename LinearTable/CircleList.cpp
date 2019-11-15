@@ -4,6 +4,8 @@
 
 #include "CircleList.h"
 
+using namespace::LinearTable;
+
 CircleList::CircleList() {
     head = tail = 0;
 }

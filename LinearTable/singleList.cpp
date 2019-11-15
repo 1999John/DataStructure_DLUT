@@ -4,6 +4,7 @@
 
 #include "singleList.h"
 
+using namespace LinearTable;
 singleList::singleList() {
     head = 0;
 }
