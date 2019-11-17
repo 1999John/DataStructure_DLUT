@@ -6,7 +6,7 @@
 #define WORKPLACE_THREADNODE_H
 
 #include <iostream>
-#include "BinaryTree.h"
+#include "Binary.h"
 
 
 namespace BinaryTree{
