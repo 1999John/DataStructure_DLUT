@@ -12,14 +12,16 @@ namespace BinaryTree {
 
     template<class T>
     class Heap {
-    private:
-        T *heapArray;
-        int currentSize;
-        int maxSize;
     public:
         Heap(T *arr, int num, int max);
 
-        void buildMaxHeap();
+        virtual void buildHeap()=0;
+
+        virtual void sift(Position root)=0;
+
+        virtual bool insert(T value)=0;
+
+        virtual bool remove(Position pos)=0;
 
         bool isLeaf(Position pos) const;
 
@@ -29,18 +31,54 @@ namespace BinaryTree {
 
         Position parent(Position pos) const;
 
-//        bool remove(int pos);
-        void siftDown(Position root);
-
-        void siftUp(Position root);
-
         void display();
 
-        bool insert(T &value);
-
-        void moveMax();         // 从堆顶移动最大值到尾部
-        T &RemoveMax();         //从堆顶删除最大值并且返回
+    protected:
+        T *heapArray;
+        int currentSize;
+        int maxSize;
     };
+
+
+    template<class T>
+    class MaxHeap : public Heap<T> {
+    public:
+        MaxHeap(T *arr, int num, int max) : Heap<T>(arr, num, max) {}
+
+        void buildHeap();
+
+        void sift(Position root);
+
+        bool insert(T value);
+
+        void moveMax();
+
+        T removeMax();
+
+        bool remove(Position pos) override;
+
+
+    };
+
+
+    template<class T>
+    class MinHeap : public Heap<T> {
+    public:
+        MinHeap(T *arr, int num, int max) : Heap<T>(arr, num, max) {}
+
+        void buildHeap();
+
+        void sift(Position root) override;
+
+        bool insert(T value) override;
+
+        bool remove(Position pos);
+
+        void moveMin();
+
+        T removeMin();
+    };
+
 
     template<class T>
     Heap<T>::Heap(T *arr, int num, int max) {
@@ -90,28 +128,35 @@ namespace BinaryTree {
     }
 
     template<class T>
-    void Heap<T>::buildMaxHeap() {
-        for (int i = (currentSize - 1) / 2; i >= 0; --i) {
-            siftDown(i);
+    void Heap<T>::display() {
+        for (int i = 0; i < currentSize; ++i) {
+            std::cout << heapArray[i] << std::endl;
         }
     }
 
+
     template<class T>
-    void Heap<T>::siftDown(Position root) {
+    void MaxHeap<T>::buildHeap() {
+        for (int i = (this->currentSize - 2) / 2; i >= 0; sift(i), --i);
+    }
+
+    template<class T>
+    void MaxHeap<T>::sift(Position root) {
         Position i = root;
-        Position j = leftChild(i);
-        T temp = heapArray[i];
-        while (j < currentSize && j >= 0) {
-            if ((j < currentSize - 2) && (heapArray[j] < heapArray[j + 1])) {
+        Position j = this->leftChild(i);
+
+        while (j < this->currentSize && j >= 0) {
+            if ((j <= this->currentSize - 2) && (this->heapArray[j] < this->heapArray[j + 1])) {
                 //  if have right child and right child is bigger than left child;
                 j++;
             }
-            if (temp < heapArray[j]) {
+            if (this->heapArray[i] < this->heapArray[j]) {
                 // if parent is less than the biggest child -> change;
-                heapArray[i] = heapArray[j];
-                heapArray[j] = temp;
+                T temp = this->heapArray[i];
+                this->heapArray[i] = this->heapArray[j];
+                this->heapArray[j] = temp;
                 i = j;
-                j = leftChild(j);
+                j = this->leftChild(j);
             } else {
                 break; // keep original status -> don't need adjust.
             }
@@ -119,36 +164,130 @@ namespace BinaryTree {
     }
 
     template<class T>
-    void Heap<T>::siftUp(Position root) {
+    bool MaxHeap<T>::insert(T value) {
+        if (this->currentSize < this->maxSize) {
+            Position j = this->currentSize;
+            this->heapArray[this->currentSize++] = value;
+
+            Position i = (j - 1) / 2;
+
+            for (; i >= 0;  i = (i - 1) / 2){
+                sift(i);
+                if(i==0){
+                    break;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    template<class T>
+    bool MaxHeap<T>::remove(Position pos) {
+        if (pos < 0 || pos >= this->currentSize) {
+            return false;
+        } else if (pos == this->currentSize - 1) {
+            this->currentSize--;
+            return true;
+        } else {
+            this->heapArray[pos] = this->heapArray[this->currentSize--];
+            sift(pos);
+        }
+    }
+
+    template<class T>
+    void MaxHeap<T>::moveMax() {
+        remove(0);
+    }
+
+    template<class T>
+    T MaxHeap<T>::removeMax() {
+        if(this->currentSize>0){
+            T ret = this->heapArray[0];
+            moveMax();
+            return ret;
+        }
+        throw "empty heap";
+    }
+
+    template<class T>
+    void MinHeap<T>::sift(Position root) {
         Position i = root;
-        Position j = leftChild(i);
-        T temp = heapArray[i];
-        while (j < currentSize && j >= 0) {
-            if ((j < currentSize - 2) && heapArray[j] > heapArray[j + 1]) {
+        Position j = this->leftChild(i);
+        T temp = this->heapArray[i];
+        while (j < this->currentSize && j >= 0) {
+            if ((j <= this->currentSize - 2) && this->heapArray[j] > this->heapArray[j + 1]) {
                 // if have the right child and right child is less than left child;
                 j++;
             }
-            if (temp > heapArray[j]) {
-                heapArray[i] = heapArray[j];
-                heapArray[j] = temp;
+            if (temp > this->heapArray[j]) {
+                this->heapArray[i] = this->heapArray[j];
+                this->heapArray[j] = temp;
                 i = j;
-                j = leftChild(j);
+                j = this->leftChild(j);
             } else {
                 break;
             }
         }
     }
 
+
     template<class T>
-    void Heap<T>::display() {
-        for (int i = 0; i < currentSize; ++i) {
-            std::cout << heapArray[i] << std::endl;
+    void MinHeap<T>::buildHeap() {
+        for (int i = (this->currentSize - 1) / 2; i >= 0; this->sift(i), --i);
+    }
+
+    template<class T>
+    bool MinHeap<T>::insert(T value) {
+        if (this->currentSize < this->maxSize) {
+            Position j = this->currentSize;
+            this->heapArray[j] = value;
+            this->currentSize++;
+            Position i = (j - 1) / 2;
+            for (; i >= 0; --i)
+            {
+                sift(i);
+                if(i==0){
+                    break;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    template<class T>
+    bool MinHeap<T>::remove(Position pos) {
+        if (pos < 0 || pos > this->currentSize) {
+            return false;
+        } else if (pos == this->currentSize - 1) {
+            this->currentSize--;
+            return true;
+        } else {
+            this->heapArray[pos] = this->heapArray[this->currentSize--];
+            sift(pos);
         }
     }
+
+    template<class T>
+    void MinHeap<T>::moveMin() {
+        if (this->currentSize > 0) {
+            remove(0);
+        }
+    }
+
+    template<class T>
+    T MinHeap<T>::removeMin() {
+        if (this->currentSize > 0) {
+            T min = this->heapArray[0];
+            moveMin();
+            return min;
+        }
+        throw "empty heap";
+    }
+
 }
 #endif //WORKPLACE_HEAP_H
-
-//李超同学工作认真，积极上进，豪迈大气，能非常好的解决他人的困惑，解决班级矛盾，能为许多事情提神而出
 
 
 
