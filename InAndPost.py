@@ -1,6 +1,5 @@
 import re
 import turtle as tt
-import tkinter as tk
 LEFT = False
 RIGHT = True
 
@@ -84,8 +83,13 @@ def pic(root,visit,posi:bool,t:tt.Turtle,angle,length):
 if __name__ == '__main__':
     tree = {}
 
-    # instr = input("input in string seprete with ',':\n")
-    # poststr = input("input post string seprete with ',':\n")
+    # instr = input("input in string seprete with ',':")
+    # poststr = input("input post string seprete with ',':")
+
+
+    instr = "2,3,5,7,9,12,14,17,18,28,30,50,53,60,63"
+    poststr = "2,3,7,5,12,9,17,18,30,53,63,60,50,28,14"
+
     tt = tt.Turtle()
     tt.speed(10)
     tt.color('yellow')
@@ -96,12 +100,14 @@ if __name__ == '__main__':
     tt.setheading(270)
 
     # prestr="10,9,7,6,8,5,3,4"
+
     # instr = "7,9,6,10,3,5,8,4"
+
     # poststr="7,6,9,3,5,4,8,10"
 
     # prestr = "10,9,1,3,8,10,6,7,11"
-    instr = "2,3,5,7,9,12,14,17,18,28,30,50,53,60,63"
-    poststr = "2,3,7,5,12,9,17,18,30,53,63,60,50,28,14"
+
+
 
     postlist = re.split('[ ,]', poststr)
     inlist = re.split('[ ,]', instr)
@@ -111,9 +117,13 @@ if __name__ == '__main__':
     v = draw
 
     # print('中序遍历',end='\t')
+
     # inorder(tree,v)
+
     # print('\n后序遍历',end='\t')
+
     # postorder(tree,v)
+
     pic(tree,v,None,tt,60,100)
     input()
     tt.down()

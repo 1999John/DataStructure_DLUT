@@ -5,12 +5,12 @@ LEFT = False
 RIGHT = True
 def visit(root,t,posi,angle):
     tt.setheading(270)
-    if posi==LEFT:
+    if posi==RIGHT:
         t.left(angle)
         t.forward(100)
         t.right(angle)
         t.write(str(root['value']), font=("Times", 18, "bold"))
-    if posi==RIGHT:
+    if posi==LEFT:
         t.right(angle)
         t.forward(100)
         t.left(angle)

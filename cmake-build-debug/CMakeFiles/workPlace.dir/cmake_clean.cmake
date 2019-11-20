@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj"
+  "CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj"
   "CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj"
   "CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj"
   "CMakeFiles/workPlace.dir/main.cpp.obj"

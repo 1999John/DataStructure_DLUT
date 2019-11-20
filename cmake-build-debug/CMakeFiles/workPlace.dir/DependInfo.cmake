@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/C++project/workPlace/BinaryTree/BinaryTree.cpp" "E:/C++project/workPlace/cmake-build-debug/CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj"
+  "E:/C++project/workPlace/BinaryTree/Binary.cpp" "E:/C++project/workPlace/cmake-build-debug/CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj"
   "E:/C++project/workPlace/LinearTable/CircleList.cpp" "E:/C++project/workPlace/cmake-build-debug/CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj"
   "E:/C++project/workPlace/LinearTable/singleList.cpp" "E:/C++project/workPlace/cmake-build-debug/CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj"
   "E:/C++project/workPlace/main.cpp" "E:/C++project/workPlace/cmake-build-debug/CMakeFiles/workPlace.dir/main.cpp.obj"

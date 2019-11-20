@@ -122,32 +122,32 @@ workPlace/fast:
 	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/build
 .PHONY : workPlace/fast
 
-BinaryTree/BinaryTree.obj: BinaryTree/BinaryTree.cpp.obj
+BinaryTree/Binary.obj: BinaryTree/Binary.cpp.obj
 
-.PHONY : BinaryTree/BinaryTree.obj
+.PHONY : BinaryTree/Binary.obj
 
 # target to build an object file
-BinaryTree/BinaryTree.cpp.obj:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj
-.PHONY : BinaryTree/BinaryTree.cpp.obj
+BinaryTree/Binary.cpp.obj:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj
+.PHONY : BinaryTree/Binary.cpp.obj
 
-BinaryTree/BinaryTree.i: BinaryTree/BinaryTree.cpp.i
+BinaryTree/Binary.i: BinaryTree/Binary.cpp.i
 
-.PHONY : BinaryTree/BinaryTree.i
+.PHONY : BinaryTree/Binary.i
 
 # target to preprocess a source file
-BinaryTree/BinaryTree.cpp.i:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.i
-.PHONY : BinaryTree/BinaryTree.cpp.i
+BinaryTree/Binary.cpp.i:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.i
+.PHONY : BinaryTree/Binary.cpp.i
 
-BinaryTree/BinaryTree.s: BinaryTree/BinaryTree.cpp.s
+BinaryTree/Binary.s: BinaryTree/Binary.cpp.s
 
-.PHONY : BinaryTree/BinaryTree.s
+.PHONY : BinaryTree/Binary.s
 
 # target to generate assembly for a file
-BinaryTree/BinaryTree.cpp.s:
-	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.s
-.PHONY : BinaryTree/BinaryTree.cpp.s
+BinaryTree/Binary.cpp.s:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.s
+.PHONY : BinaryTree/Binary.cpp.s
 
 LinearTable/CircleList.obj: LinearTable/CircleList.cpp.obj
 
@@ -239,9 +239,9 @@ help:
 	@echo ... workPlace
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... BinaryTree/BinaryTree.obj
-	@echo ... BinaryTree/BinaryTree.i
-	@echo ... BinaryTree/BinaryTree.s
+	@echo ... BinaryTree/Binary.obj
+	@echo ... BinaryTree/Binary.i
+	@echo ... BinaryTree/Binary.s
 	@echo ... LinearTable/CircleList.obj
 	@echo ... LinearTable/CircleList.i
 	@echo ... LinearTable/CircleList.s

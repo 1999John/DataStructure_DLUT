@@ -95,25 +95,25 @@ CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.s"
 	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\LinearTable\CircleList.cpp -o CMakeFiles\workPlace.dir\LinearTable\CircleList.cpp.s
 
-CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj: CMakeFiles/workPlace.dir/flags.make
-CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj: ../BinaryTree/BinaryTree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\workPlace.dir\BinaryTree\BinaryTree.cpp.obj -c E:\C++project\workPlace\BinaryTree\BinaryTree.cpp
+CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj: CMakeFiles/workPlace.dir/flags.make
+CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj: ../BinaryTree/Binary.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\C++project\workPlace\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\workPlace.dir\BinaryTree\Binary.cpp.obj -c E:\C++project\workPlace\BinaryTree\Binary.cpp
 
-CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.i"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\C++project\workPlace\BinaryTree\BinaryTree.cpp > CMakeFiles\workPlace.dir\BinaryTree\BinaryTree.cpp.i
+CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.i"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\C++project\workPlace\BinaryTree\Binary.cpp > CMakeFiles\workPlace.dir\BinaryTree\Binary.cpp.i
 
-CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.s"
-	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\BinaryTree\BinaryTree.cpp -o CMakeFiles\workPlace.dir\BinaryTree\BinaryTree.cpp.s
+CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.s"
+	F:\CodeBlocks\MinGW\bin\mingw32-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\C++project\workPlace\BinaryTree\Binary.cpp -o CMakeFiles\workPlace.dir\BinaryTree\Binary.cpp.s
 
 # Object files for target workPlace
 workPlace_OBJECTS = \
 "CMakeFiles/workPlace.dir/main.cpp.obj" \
 "CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj" \
 "CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj" \
-"CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj"
+"CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj"
 
 # External object files for target workPlace
 workPlace_EXTERNAL_OBJECTS =
@@ -121,7 +121,7 @@ workPlace_EXTERNAL_OBJECTS =
 workPlace.exe: CMakeFiles/workPlace.dir/main.cpp.obj
 workPlace.exe: CMakeFiles/workPlace.dir/LinearTable/singleList.cpp.obj
 workPlace.exe: CMakeFiles/workPlace.dir/LinearTable/CircleList.cpp.obj
-workPlace.exe: CMakeFiles/workPlace.dir/BinaryTree/BinaryTree.cpp.obj
+workPlace.exe: CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.obj
 workPlace.exe: CMakeFiles/workPlace.dir/build.make
 workPlace.exe: CMakeFiles/workPlace.dir/linklibs.rsp
 workPlace.exe: CMakeFiles/workPlace.dir/objects1.rsp

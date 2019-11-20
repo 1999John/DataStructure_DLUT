@@ -6,17 +6,45 @@
 
 #IncludeRegexTransform: 
 
-E:/C++project/workPlace/BinaryTree/BinaryTree.cpp
+E:/C++project/workPlace/BinaryTree/AVLTree.h
+iostream
+-
+stack
+-
+
+E:/C++project/workPlace/BinaryTree/Binary.cpp
+Binary.h
+E:/C++project/workPlace/BinaryTree/Binary.h
 SearchTree.h
 E:/C++project/workPlace/BinaryTree/SearchTree.h
+AVLTree.h
+E:/C++project/workPlace/BinaryTree/AVLTree.h
+ThreadTree.h
+E:/C++project/workPlace/BinaryTree/ThreadTree.h
+Heap.h
+E:/C++project/workPlace/BinaryTree/Heap.h
 
-E:/C++project/workPlace/BinaryTree/RLNode.h
+E:/C++project/workPlace/BinaryTree/Binary.h
+
+E:/C++project/workPlace/BinaryTree/Heap.h
+iostream
+-
+
+E:/C++project/workPlace/BinaryTree/Node.h
 iostream
 -
 
 E:/C++project/workPlace/BinaryTree/SearchTree.h
-RLNode.h
-E:/C++project/workPlace/BinaryTree/RLNode.h
+Node.h
+E:/C++project/workPlace/BinaryTree/Node.h
+Binary.h
+E:/C++project/workPlace/BinaryTree/Binary.h
 cmath
 -
+queue
+-
+
+E:/C++project/workPlace/BinaryTree/ThreadTree.h
+Node.h
+E:/C++project/workPlace/BinaryTree/Node.h
 

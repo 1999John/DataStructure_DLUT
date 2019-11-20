@@ -10,24 +10,10 @@
 
 #define Left false
 #define Right true
-template <class T>
-struct avlNode{
-    T value;
-    avlNode<T>* leftChild;
-    avlNode<T>* rightChild;
-    avlNode<T>* parent;
-    bool posi;
-    int balFactor;
-    avlNode(T v,avlNode<T>* p,bool po,avlNode<T>* l=NULL,avlNode<T>* r = NULL,int b=0):value(v){
-        this->parent = p;
-        posi = po;
-        leftChild = l;
-        rightChild = r;
-        balFactor = b;
-    }
-};
+
 
 namespace BinaryTree{
+
     template <class T>
     class AVLTree {
     private:

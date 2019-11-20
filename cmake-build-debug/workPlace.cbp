@@ -80,19 +80,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/C++project/workPlace/BinaryTree/BinaryTree.cpp">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/AVLTree.h">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/BinaryTree/BinaryTree.h">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/Binary.cpp">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/BinaryTree/RLNode.h">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/Binary.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/BinaryTree/Heap.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/BinaryTree/HuffmanTree.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/BinaryTree/Node.h">
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/BinaryTree/SearchTree.h">
 			<Option target="workPlace"/>
 		</Unit>
-		<Unit filename="E:/C++project/workPlace/BinaryTree/ThreadNode.h">
+		<Unit filename="E:/C++project/workPlace/BinaryTree/ThreadTree.h">
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/LinearTable/ACircleQueue.h">
