@@ -5,7 +5,7 @@
 #ifndef WORKPLACE_SEARCHTREE_H
 #define WORKPLACE_SEARCHTREE_H
 
-#include "RLNode.h"
+#include "Node.h"
 #include "Binary.h"
 
 #include <cmath>
@@ -19,14 +19,14 @@ namespace BinaryTree {
 
         void getWidthArr(rlNode<T> *root, int height, int *widthArr);
 
-        bool allInleft(rlNode<T> *root);
-
     public:
         SearchTree(T value);
 
-        bool find(rlNode<T> *root, T value);
+        bool find(rlNode<T> *root, T value,rlNode<T>* &get);
 
         void insert(T value);
+
+        void Delete(T value);
 
         void twoChild(rlNode<T> *root, int *num);
 
@@ -91,12 +91,13 @@ namespace BinaryTree {
     }
 
     template<class T>
-    bool SearchTree<T>::find(rlNode<T> *root, T value) {
+    bool SearchTree<T>::find(rlNode<T> *root, T value,rlNode<T>* &get) {
         if (root) {
             if (root->value == value) {
+                get = root;
                 return true;
             } else {
-                return find(root->leftChild, value) || find(root->rightChild, value);
+                return find(root->leftChild, value,get) || find(root->rightChild, value,get);
             }
         }
         return false;
@@ -205,8 +206,8 @@ namespace BinaryTree {
     template<class T>
     void SearchTree<T>::inOrder(rlNode<T> *root) {
         if (root) {
-            std::cout << root->value << std::endl;
             inOrder(root->leftChild);
+            std::cout << root->value << std::endl;
             inOrder(root->rightChild);
         }
     }
@@ -266,18 +267,20 @@ namespace BinaryTree {
     }
 
     template<class T>
-    bool SearchTree<T>::allInleft(rlNode<T> *root) {
-        if (root) {
-            if (root->rightChild && !root->leftChild) {
-                return false;
-            } else {
-                return allInleft(root->leftChild) && allInleft(root->rightChild);
-            }
+    void SearchTree<T>::Delete(T value) {
+        rlNode<T>* ans;
+        if(this->find(this->root,value,ans)){
+            rlNode<T>* left = ans->leftChild;
+            rlNode<T>* right = ans->rightChild;
+            rlNode<T>*p = left;
+            rlNode<T>*q = left;
+            for (; left->rightChild; q = p,p = p->rightChild);
+            q->rightChild = NULL;
+            ans->value = p->value;
+            delete p;
         }
-        return true;
+        return;
     }
-
-
 
 }
 
