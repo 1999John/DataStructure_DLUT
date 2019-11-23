@@ -26,7 +26,9 @@ namespace BinaryTree {
 
         void insert(T value);
 
-        void Delete(T value);
+        void deleteByCopying(T value);
+
+        void deleteByMerging(T value);
 
         void twoChild(rlNode<T> *root, int *num);
 
@@ -267,19 +269,68 @@ namespace BinaryTree {
     }
 
     template<class T>
-    void SearchTree<T>::Delete(T value) {
-        rlNode<T>* ans;
-        if(this->find(this->root,value,ans)){
-            rlNode<T>* left = ans->leftChild;
-            rlNode<T>* right = ans->rightChild;
-            rlNode<T>*p = left;
-            rlNode<T>*q = left;
-            for (; left->rightChild; q = p,p = p->rightChild);
-            q->rightChild = NULL;
-            ans->value = p->value;
-            delete p;
+    void SearchTree<T>::deleteByCopying(T value) {
+        rlNode<T>* node;
+        if(find(this->root,value,node)){
+            if (node->rightChild==NULL){
+                rlNode<T>* left = node->leftChild;
+                node->value = left->value;
+                node->leftChild = left->leftChild;
+                node->rightChild = left->rightChild;
+                delete left;
+            } else if (node->leftChild==NULL){
+                rlNode<T>* right = node->rightChild;
+                node->value = right->value;
+                node->leftChild = right->leftChild;
+                node->rightChild = right->rightChild;
+                delete right;
+            } else{
+                rlNode<T>* q = node->leftChild;
+                rlNode<T>* p = node;
+                for (; q->rightChild; p = q,q=q->rightChild);
+                node->value = q->value;
+                if(p==node){
+                    node->leftChild=q->leftChild;
+                }else{
+                    p->rightChild=q->leftChild;
+                }
+                delete q;
+            }
         }
         return;
+    }
+
+    template<class T>
+    void SearchTree<T>::deleteByMerging(T value) {
+        rlNode<T>* current = this->root;
+        while(current->value!=value){
+            if(current->value<value){
+                current = current->rightChild;
+            } else{
+                current = current->leftChild;
+            }
+        }
+        if(current->leftChild==NULL){
+            rlNode<T>* right = current->rightChild;
+
+            current->value = right->value;
+            current->leftChild = right->leftChild;
+            current->rightChild = right->rightChild;
+            delete right;
+        } else{
+            rlNode<T>* right = current->rightChild;
+            rlNode<T>* left = current->leftChild;
+
+            rlNode<T>* p=left;
+            for (; p->rightChild; p=p->rightChild);
+
+            p->rightChild = right;
+
+            current->value = left->value;
+            current->leftChild = left->leftChild;
+            current->rightChild = left->rightChild;
+            delete left;
+        }
     }
 
 }
