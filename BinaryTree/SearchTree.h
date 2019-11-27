@@ -22,6 +22,11 @@ namespace BinaryTree {
     public:
         SearchTree(T value);
 
+        /*
+         * root: start node
+         * value:the value that you want
+         * get:the node of the value if have
+         */
         bool find(rlNode<T> *root, T value,rlNode<T>* &get);
 
         void insert(T value);
@@ -30,25 +35,25 @@ namespace BinaryTree {
 
         void deleteByMerging(T value);
 
-        void twoChild(rlNode<T> *root, int *num);
+        void twoChild(rlNode<T> *root, int *num);  // numbers of the node who has two child
 
-        void oneChild(rlNode<T> *root, int *num);
+        void oneChild(rlNode<T> *root, int *num);   // numbers of the node who has one child
 
-        void noChild(rlNode<T> *root, int *num);
+        void noChild(rlNode<T> *root, int *num);    // numbers of the node who donnot have child
 
-        void getHeight(rlNode<T> *root, int *height);
+        void getHeight(rlNode<T> *root, int *height);   // the height of the tree
 
-        void getWidth(rlNode<T> *root, int *width);
+        void getWidth(rlNode<T> *root, int *width);     // the width of the tree
 
-        void getMax(rlNode<T> *root, T *max);
+        void getMax(rlNode<T> *root, T *max);   // the max value node
 
-        void exchange(rlNode<T> *root);
+        void exchange(rlNode<T> *root);     // exchange node's left child and right child
 
         void inOrder(rlNode<T> *root);
 
-        void deleteCurrentLeaf(rlNode<T> *root, rlNode<T> *parent);
+        void deleteCurrentLeaf(rlNode<T> *root, rlNode<T> *parent);     // delete current leaf node
 
-        bool isCompleteBinaryTree();
+        bool isCompleteBinaryTree();        // wether or not a complete binary tree
 
         rlNode<T> *getRoot() const;
     };
