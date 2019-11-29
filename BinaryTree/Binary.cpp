@@ -39,7 +39,12 @@ namespace BinaryTree{
         }
 
         cout<<endl;
-        st.deleteByCopying(40);
+        try {
+            st.deleteByMerging(40);
+        }
+        catch (const char* e){
+            cout<<e;
+        }
         cout<<endl;
 
         cout<<endl;
@@ -90,18 +95,23 @@ namespace BinaryTree{
         Heap<int>* maxhp = new MaxHeap<int>(arr,10,20);
         cout<<"the max heap"<<endl;
         maxhp->display();
-        maxhp->insert(90);
-        cout<<endl;
-        cout<<"insert 90"<<endl;
-        maxhp->display();
-        cout<<endl;
+//        maxhp->insert(90);
+//        cout<<endl;
+//        cout<<"insert 90"<<endl;
+//        maxhp->display();
+//        cout<<endl;
 
-        Heap<int>* minhp = new MinHeap<int>(arr,10,20);
-        cout<<"the min heap"<<endl;
-        minhp->display();
-        minhp->insert(-3);
-        cout<<endl;
-        cout<<"insert -3"<<endl;
-        minhp->display();
+        if(maxhp->remove(1)){
+            cout<<"suc"<<endl;
+        }
+        maxhp->display();
+
+//        Heap<int>* minhp = new MinHeap<int>(arr,10,20);
+//        cout<<"the min heap"<<endl;
+//        minhp->display();
+//        minhp->insert(-3);
+//        cout<<endl;
+//        cout<<"insert -3"<<endl;
+//        minhp->display();
     }
 }

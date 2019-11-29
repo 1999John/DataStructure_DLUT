@@ -308,6 +308,10 @@ namespace BinaryTree {
     template<class T>
     void SearchTree<T>::deleteByMerging(T value) {
         rlNode<T>* current = this->root;
+        rlNode<T>* a;
+        if(!find(this->root,value,a)){
+            throw "not in the tree ";
+        }
         while(current->value!=value){
             if(current->value<value){
                 current = current->rightChild;

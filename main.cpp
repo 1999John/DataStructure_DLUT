@@ -4,5 +4,5 @@
 int main() {
 
     using namespace BinaryTree;
-    SearchTreeTest();
+    HeapTest();
 }

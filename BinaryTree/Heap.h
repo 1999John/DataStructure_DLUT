@@ -12,16 +12,17 @@ namespace BinaryTree {
 
     template<class T>
     class Heap {
+    protected:
+        virtual void buildHeap() = 0;
+
     public:
         Heap(T *arr, int num, int max);
 
-        virtual void buildHeap()=0;
+        virtual void sift(Position root) = 0;
 
-        virtual void sift(Position root)=0;
+        virtual bool insert(T value) = 0;
 
-        virtual bool insert(T value)=0;
-
-        virtual bool remove(Position pos)=0;
+        virtual bool remove(Position pos) = 0;
 
         bool isLeaf(Position pos) const;
 
@@ -33,6 +34,8 @@ namespace BinaryTree {
 
         void display();
 
+        T &operator[](Position pos);
+
     protected:
         T *heapArray;
         int currentSize;
@@ -42,10 +45,14 @@ namespace BinaryTree {
 
     template<class T>
     class MaxHeap : public Heap<T> {
-    public:
-        MaxHeap(T *arr, int num, int max) : Heap<T>(arr, num, max) {}
-
+    protected:
         void buildHeap();
+
+    public:
+        MaxHeap(T *arr, int num, int max) : Heap<T>(arr, num, max) {
+            this->buildHeap();
+        }
+
 
         void sift(Position root);
 
@@ -63,10 +70,13 @@ namespace BinaryTree {
 
     template<class T>
     class MinHeap : public Heap<T> {
-    public:
-        MinHeap(T *arr, int num, int max) : Heap<T>(arr, num, max) {}
-
+    protected:
         void buildHeap();
+
+    public:
+        MinHeap(T *arr, int num, int max) : Heap<T>(arr, num, max) {
+            this->buildHeap();
+        }
 
         void sift(Position root) override;
 
@@ -83,10 +93,10 @@ namespace BinaryTree {
     template<class T>
     Heap<T>::Heap(T *arr, int num, int max) {
         maxSize = max;
-        heapArray = new T[maxSize];
+        this->heapArray = new T[maxSize];
         currentSize = num;
         for (int i = 0; i < currentSize; ++i) {
-            heapArray[i] = arr[i];
+            this->heapArray[i] = arr[i];
         }
     }
 
@@ -130,7 +140,16 @@ namespace BinaryTree {
     template<class T>
     void Heap<T>::display() {
         for (int i = 0; i < currentSize; ++i) {
-            std::cout << heapArray[i] << std::endl;
+            std::cout << this->heapArray[i] << std::endl;
+        }
+    }
+
+    template<class T>
+    T &Heap<T>::operator[](Position pos) {
+        if (pos < 0 || pos > this->currentSize) {
+            throw "no this element.";
+        } else {
+            return this->heapArray[pos];
         }
     }
 
@@ -157,6 +176,9 @@ namespace BinaryTree {
                 this->heapArray[j] = temp;
                 i = j;
                 j = this->leftChild(j);
+                if(j<0){
+                    break;
+                }
             } else {
                 break; // keep original status -> don't need adjust.
             }
@@ -171,9 +193,9 @@ namespace BinaryTree {
 
             Position i = (j - 1) / 2;
 
-            for (; i >= 0;  i = (i - 1) / 2){
+            for (; i >= 0; i = (i - 1) / 2) {
                 sift(i);
-                if(i==0){
+                if (i == 0) {
                     break;
                 }
             }
@@ -190,7 +212,7 @@ namespace BinaryTree {
             this->currentSize--;
             return true;
         } else {
-            this->heapArray[pos] = this->heapArray[this->currentSize--];
+            this->heapArray[pos] = this->heapArray[--this->currentSize];
             sift(pos);
         }
     }
@@ -202,7 +224,7 @@ namespace BinaryTree {
 
     template<class T>
     T MaxHeap<T>::removeMax() {
-        if(this->currentSize>0){
+        if (this->currentSize > 0) {
             T ret = this->heapArray[0];
             moveMax();
             return ret;
@@ -244,10 +266,9 @@ namespace BinaryTree {
             this->heapArray[j] = value;
             this->currentSize++;
             Position i = (j - 1) / 2;
-            for (; i >= 0; --i)
-            {
+            for (; i >= 0; --i) {
                 sift(i);
-                if(i==0){
+                if (i == 0) {
                     break;
                 }
             }
@@ -264,7 +285,7 @@ namespace BinaryTree {
             this->currentSize--;
             return true;
         } else {
-            this->heapArray[pos] = this->heapArray[this->currentSize--];
+            this->heapArray[pos] = this->heapArray[--this->currentSize];
             sift(pos);
         }
     }

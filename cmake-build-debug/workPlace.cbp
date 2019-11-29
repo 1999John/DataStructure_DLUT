@@ -104,6 +104,18 @@
 		<Unit filename="E:/C++project/workPlace/BinaryTree/ThreadTree.h">
 			<Option target="workPlace"/>
 		</Unit>
+		<Unit filename="E:/C++project/workPlace/Graph/AdjGraph.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/Graph/Edge.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/Graph/Graph.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/Graph/init.h">
+			<Option target="workPlace"/>
+		</Unit>
 		<Unit filename="E:/C++project/workPlace/LinearTable/ACircleQueue.h">
 			<Option target="workPlace"/>
 		</Unit>
