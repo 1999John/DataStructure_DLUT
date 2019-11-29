@@ -1,6 +1,6 @@
-´óÁ¬Àí¹¤´óÑ§2019½ì´ó¶şÊı¾İ½á¹¹Ìâ²¿·Ö×÷Òµ¡£
+å¤§è¿ç†å·¥å¤§å­¦2019å±Šå¤§äºŒæ•°æ®ç»“æ„é¢˜éƒ¨åˆ†ä½œä¸šã€‚
 
-Dalian university of technology's homework of data struct.
+Dalian university of technology's homework of data structure.
 
 author:John Xu
 
