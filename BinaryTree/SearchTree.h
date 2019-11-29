@@ -5,7 +5,7 @@
 #ifndef WORKPLACE_SEARCHTREE_H
 #define WORKPLACE_SEARCHTREE_H
 
-#include "RLNode.h"
+#include "Node.h"
 #include "Binary.h"
 
 #include <cmath>
@@ -19,34 +19,41 @@ namespace BinaryTree {
 
         void getWidthArr(rlNode<T> *root, int height, int *widthArr);
 
-        bool allInleft(rlNode<T> *root);
-
     public:
         SearchTree(T value);
 
-        bool find(rlNode<T> *root, T value);
+        /*
+         * root: start node
+         * value:the value that you want
+         * get:the node of the value if have
+         */
+        bool find(rlNode<T> *root, T value,rlNode<T>* &get);
 
         void insert(T value);
 
-        void twoChild(rlNode<T> *root, int *num);
+        void deleteByCopying(T value);
 
-        void oneChild(rlNode<T> *root, int *num);
+        void deleteByMerging(T value);
 
-        void noChild(rlNode<T> *root, int *num);
+        void twoChild(rlNode<T> *root, int *num);  // numbers of the node who has two child
 
-        void getHeight(rlNode<T> *root, int *height);
+        void oneChild(rlNode<T> *root, int *num);   // numbers of the node who has one child
 
-        void getWidth(rlNode<T> *root, int *width);
+        void noChild(rlNode<T> *root, int *num);    // numbers of the node who donnot have child
 
-        void getMax(rlNode<T> *root, T *max);
+        void getHeight(rlNode<T> *root, int *height);   // the height of the tree
 
-        void exchange(rlNode<T> *root);
+        void getWidth(rlNode<T> *root, int *width);     // the width of the tree
+
+        void getMax(rlNode<T> *root, T *max);   // the max value node
+
+        void exchange(rlNode<T> *root);     // exchange node's left child and right child
 
         void inOrder(rlNode<T> *root);
 
-        void deleteCurrentLeaf(rlNode<T> *root, rlNode<T> *parent);
+        void deleteCurrentLeaf(rlNode<T> *root, rlNode<T> *parent);     // delete current leaf node
 
-        bool isCompleteBinaryTree();
+        bool isCompleteBinaryTree();        // wether or not a complete binary tree
 
         rlNode<T> *getRoot() const;
     };
@@ -91,12 +98,13 @@ namespace BinaryTree {
     }
 
     template<class T>
-    bool SearchTree<T>::find(rlNode<T> *root, T value) {
+    bool SearchTree<T>::find(rlNode<T> *root, T value,rlNode<T>* &get) {
         if (root) {
             if (root->value == value) {
+                get = root;
                 return true;
             } else {
-                return find(root->leftChild, value) || find(root->rightChild, value);
+                return find(root->leftChild, value,get) || find(root->rightChild, value,get);
             }
         }
         return false;
@@ -205,8 +213,8 @@ namespace BinaryTree {
     template<class T>
     void SearchTree<T>::inOrder(rlNode<T> *root) {
         if (root) {
-            std::cout << root->value << std::endl;
             inOrder(root->leftChild);
+            std::cout << root->value << std::endl;
             inOrder(root->rightChild);
         }
     }
@@ -266,18 +274,73 @@ namespace BinaryTree {
     }
 
     template<class T>
-    bool SearchTree<T>::allInleft(rlNode<T> *root) {
-        if (root) {
-            if (root->rightChild && !root->leftChild) {
-                return false;
-            } else {
-                return allInleft(root->leftChild) && allInleft(root->rightChild);
+    void SearchTree<T>::deleteByCopying(T value) {
+        rlNode<T>* node;
+        if(find(this->root,value,node)){
+            if (node->rightChild==NULL){
+                rlNode<T>* left = node->leftChild;
+                node->value = left->value;
+                node->leftChild = left->leftChild;
+                node->rightChild = left->rightChild;
+                delete left;
+            } else if (node->leftChild==NULL){
+                rlNode<T>* right = node->rightChild;
+                node->value = right->value;
+                node->leftChild = right->leftChild;
+                node->rightChild = right->rightChild;
+                delete right;
+            } else{
+                rlNode<T>* q = node->leftChild;
+                rlNode<T>* p = node;
+                for (; q->rightChild; p = q,q=q->rightChild);
+                node->value = q->value;
+                if(p==node){
+                    node->leftChild=q->leftChild;
+                }else{
+                    p->rightChild=q->leftChild;
+                }
+                delete q;
             }
         }
-        return true;
+        return;
     }
 
+    template<class T>
+    void SearchTree<T>::deleteByMerging(T value) {
+        rlNode<T>* current = this->root;
+        rlNode<T>* a;
+        if(!find(this->root,value,a)){
+            throw "not in the tree ";
+        }
+        while(current->value!=value){
+            if(current->value<value){
+                current = current->rightChild;
+            } else{
+                current = current->leftChild;
+            }
+        }
+        if(current->leftChild==NULL){
+            rlNode<T>* right = current->rightChild;
 
+            current->value = right->value;
+            current->leftChild = right->leftChild;
+            current->rightChild = right->rightChild;
+            delete right;
+        } else{
+            rlNode<T>* right = current->rightChild;
+            rlNode<T>* left = current->leftChild;
+
+            rlNode<T>* p=left;
+            for (; p->rightChild; p=p->rightChild);
+
+            p->rightChild = right;
+
+            current->value = left->value;
+            current->leftChild = left->leftChild;
+            current->rightChild = left->rightChild;
+            delete left;
+        }
+    }
 
 }
 
