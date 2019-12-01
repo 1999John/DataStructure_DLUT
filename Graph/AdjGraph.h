@@ -1,0 +1,109 @@
+//
+// Created by ThinkPad on 2019/11/23.
+//
+
+#ifndef WORKPLACE_ADJGRAPH_H
+#define WORKPLACE_ADJGRAPH_H
+
+#include "init.h"
+#include "Edge.h"
+
+namespace nGraph {
+    template<class EdgeType>
+    class AdjGraph : public Graph<EdgeType> {
+    private:
+        int **matrix;
+    public:
+
+        AdjGraph(int vertexNum);
+
+        virtual ~AdjGraph();
+
+        Edge<EdgeType> FirstEdge(int oneVertex);
+
+        Edge<EdgeType> NextEdge(Edge<EdgeType> oneEdge);
+
+        void setEdge(int start, int end, EdgeType weight);
+
+        void delEdge(int start, int end);
+
+    };
+
+    template<class EdgeType>
+    AdjGraph<EdgeType>::AdjGraph(int vertexNum) : Graph<EdgeType>(vertexNum) {
+        matrix = (int **) new int *[vertexNum];
+        for (int i = 0; i < vertexNum; ++i) {
+            matrix[i] = new int[vertexNum];
+        }
+        for (int i = 0; i < vertexNum; ++i) {
+            for (int j = 0; j < vertexNum; ++j) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    template<class EdgeType>
+    AdjGraph<EdgeType>::~AdjGraph() {
+        {
+            for (int i = 0; i < this->vertexNum; ++i) {
+                delete[] matrix[i];
+            }
+            delete[] matrix;
+        }
+    }
+
+    template<class EdgeType>
+    Edge<EdgeType> AdjGraph<EdgeType>::FirstEdge(int oneVertex) {
+        Edge<EdgeType> tmpEdge;
+        tmpEdge.start = oneVertex;
+        bool flag = false;
+        for (int i = 0; i < this->vertexNum; ++i) {
+            if (matrix[oneVertex][i] != 0) {
+                tmpEdge.end = i;
+                tmpEdge.weight = matrix[oneVertex][i];
+                flag = true;
+                break;
+            }
+        }
+        if (flag) {
+            return tmpEdge;
+        }
+        throw "404 not found";
+    }
+
+    template<class EdgeType>
+    Edge<EdgeType> AdjGraph<EdgeType>::NextEdge(Edge<EdgeType> oneEdge) {
+        Edge<EdgeType> tmpEdge;
+        tmpEdge.start = oneEdge.start;
+        bool flag = false;
+        for (int i = tmpEdge.end + 1; i < this->vertexNum; ++i) {
+            if (matrix[oneEdge.start][i] != 0) {
+                tmpEdge.end = i;
+                tmpEdge.weight = matrix[oneEdge][i];
+                flag = true;
+                break;
+            }
+        }
+        if (flag) {
+            return tmpEdge;
+        }
+        throw "404 not found";
+    }
+
+    template<class EdgeType>
+    void AdjGraph<EdgeType>::setEdge(int start, int end, EdgeType weight) {
+        if (matrix[start][end] == 0) {
+            this->vertexNum++;
+        }
+        matrix[start][end] = weight;
+    }
+
+    template<class EdgeType>
+    void AdjGraph<EdgeType>::delEdge(int start, int end) {
+        if (matrix[start][end] != 0) {
+            this->vertexNum--;
+        }
+        matrix[start][end] = 0;
+    }
+}
+#endif //WORKPLACE_ADJGRAPH_H
