@@ -190,7 +190,7 @@ namespace BinaryTree {
             this->currentSize--;
             return true;
         } else {
-            this->heapArray[pos] = this->heapArray[this->currentSize--];
+            this->heapArray[pos] = this->heapArray[--this->currentSize];
             sift(pos);
         }
     }
@@ -264,7 +264,7 @@ namespace BinaryTree {
             this->currentSize--;
             return true;
         } else {
-            this->heapArray[pos] = this->heapArray[this->currentSize--];
+            this->heapArray[pos] = this->heapArray[--this->currentSize];
             sift(pos);
         }
     }
