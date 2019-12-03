@@ -1,6 +1,6 @@
 //
 // Created by ThinkPad on 2019/11/15.
-//author: 软1803 徐志
+//author: 不告诉你
 
 #include "Binary.h"
 #include "SearchTree.h"
