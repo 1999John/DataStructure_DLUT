@@ -28,7 +28,7 @@ namespace BinaryTree {
 
         void insert(T value);
 
-        void twoChild(rlNode<T> *root, int *num);
+        void twoChild(rlNode<T> *root, int *num);  //递归实现
 
         void oneChild(rlNode<T> *root, int *num);
 
