@@ -19,10 +19,10 @@ SearchTree.h
 E:/C++project/workPlace/BinaryTree/SearchTree.h
 AVLTree.h
 E:/C++project/workPlace/BinaryTree/AVLTree.h
-ThreadTree.h
-E:/C++project/workPlace/BinaryTree/ThreadTree.h
 Heap.h
 E:/C++project/workPlace/BinaryTree/Heap.h
+ThreadTree.h
+E:/C++project/workPlace/BinaryTree/ThreadTree.h
 
 E:/C++project/workPlace/BinaryTree/Binary.h
 
@@ -47,4 +47,12 @@ queue
 E:/C++project/workPlace/BinaryTree/ThreadTree.h
 Node.h
 E:/C++project/workPlace/BinaryTree/Node.h
+
+E:/C++project/workPlace/Graph/init.h
+
+E:/C++project/workPlace/main.cpp
+Graph/init.h
+E:/C++project/workPlace/Graph/init.h
+BinaryTree/Binary.h
+E:/C++project/workPlace/BinaryTree/Binary.h
 

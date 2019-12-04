@@ -113,6 +113,12 @@
 		<Unit filename="E:/C++project/workPlace/Graph/Graph.h">
 			<Option target="workPlace"/>
 		</Unit>
+		<Unit filename="E:/C++project/workPlace/Graph/ListGraph.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/Graph/init.cpp">
+			<Option target="workPlace"/>
+		</Unit>
 		<Unit filename="E:/C++project/workPlace/Graph/init.h">
 			<Option target="workPlace"/>
 		</Unit>

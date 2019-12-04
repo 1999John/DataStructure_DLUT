@@ -75,39 +75,38 @@ namespace BinaryTree{
         avl.insert(105);
         avl.inOrder(avl.getRoot());
     }
-}
 
-void ThreadTreeTest() {
-    using namespace std;
-    ThreadTree<int> tree(10);
-    tree.insert(8);
-    tree.insert(12);
-    tree.insert(13);
-    tree.insert(18);
-    tree.insert(6);
-    tree.insert(9);
-    threadNode<int>* pre = NULL ;
-    tree.InThread(tree.getRoot(),pre);
-    tree.InOrder(tree.getRoot());
-}
+    void ThreadTreeTest() {
+        using namespace std;
+        ThreadTree<int> tree(10);
+        tree.insert(8);
+        tree.insert(12);
+        tree.insert(13);
+        tree.insert(18);
+        tree.insert(6);
+        tree.insert(9);
+        threadNode<int>* pre = NULL ;
+        tree.InThread(tree.getRoot(),pre);
+        tree.InOrder(tree.getRoot());
+    }
 
-void HeapTest() {
-    using std::cout;
-    using std::endl;
-    int arr[10] = {20,12,35,15,10,80,30,17,2,1};
-    Heap<int>* maxhp = new MaxHeap<int>(arr,10,20);
-    cout<<"the max heap"<<endl;
-    maxhp->display();
+    void HeapTest() {
+        using std::cout;
+        using std::endl;
+        int arr[10] = {20,12,35,15,10,80,30,17,2,1};
+        Heap<int>* maxhp = new MaxHeap<int>(arr,10,20);
+        cout<<"the max heap"<<endl;
+        maxhp->display();
 //        maxhp->insert(90);
 //        cout<<endl;
 //        cout<<"insert 90"<<endl;
 //        maxhp->display();
 //        cout<<endl;
 
-    if(maxhp->remove(1)){
-        cout<<"suc"<<endl;
-    }
-    maxhp->display();
+        if(maxhp->remove(1)){
+            cout<<"suc"<<endl;
+        }
+        maxhp->display();
 
 //        Heap<int>* minhp = new MinHeap<int>(arr,10,20);
 //        cout<<"the min heap"<<endl;
@@ -116,4 +115,6 @@ void HeapTest() {
 //        cout<<endl;
 //        cout<<"insert -3"<<endl;
 //        minhp->display();
+    }
 }
+

@@ -149,6 +149,33 @@ BinaryTree/Binary.cpp.s:
 	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/BinaryTree/Binary.cpp.s
 .PHONY : BinaryTree/Binary.cpp.s
 
+Graph/init.obj: Graph/init.cpp.obj
+
+.PHONY : Graph/init.obj
+
+# target to build an object file
+Graph/init.cpp.obj:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/Graph/init.cpp.obj
+.PHONY : Graph/init.cpp.obj
+
+Graph/init.i: Graph/init.cpp.i
+
+.PHONY : Graph/init.i
+
+# target to preprocess a source file
+Graph/init.cpp.i:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/Graph/init.cpp.i
+.PHONY : Graph/init.cpp.i
+
+Graph/init.s: Graph/init.cpp.s
+
+.PHONY : Graph/init.s
+
+# target to generate assembly for a file
+Graph/init.cpp.s:
+	$(MAKE) -f CMakeFiles\workPlace.dir\build.make CMakeFiles/workPlace.dir/Graph/init.cpp.s
+.PHONY : Graph/init.cpp.s
+
 LinearTable/CircleList.obj: LinearTable/CircleList.cpp.obj
 
 .PHONY : LinearTable/CircleList.obj
@@ -242,6 +269,9 @@ help:
 	@echo ... BinaryTree/Binary.obj
 	@echo ... BinaryTree/Binary.i
 	@echo ... BinaryTree/Binary.s
+	@echo ... Graph/init.obj
+	@echo ... Graph/init.i
+	@echo ... Graph/init.s
 	@echo ... LinearTable/CircleList.obj
 	@echo ... LinearTable/CircleList.i
 	@echo ... LinearTable/CircleList.s
