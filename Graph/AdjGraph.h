@@ -7,8 +7,11 @@
 
 #include "init.h"
 #include "Edge.h"
+#include <math.h>
 
 namespace nGraph {
+
+
     template<class EdgeType>
     class AdjGraph : public Graph<EdgeType> {
     private:
@@ -53,41 +56,35 @@ namespace nGraph {
     }
 
     template<class EdgeType>
-    Edge<EdgeType> AdjGraph<EdgeType>::FirstEdge(int oneVertex) {
+    Edge<EdgeType> AdjGraph<EdgeType>::FirstEdge(VERTEXE oneVertex) {
         Edge<EdgeType> tmpEdge;
         tmpEdge.start = oneVertex;
-        bool flag = false;
+        tmpEdge.end = -1;
+        tmpEdge.weight = MYINFINITY;
         for (int i = 0; i < this->vertexNum; ++i) {
             if (matrix[oneVertex][i] != 0) {
                 tmpEdge.end = i;
                 tmpEdge.weight = matrix[oneVertex][i];
-                flag = true;
-                break;
+                return tmpEdge;
             }
         }
-        if (flag) {
-            return tmpEdge;
-        }
-        throw "404 not found";
+        return tmpEdge;
     }
 
     template<class EdgeType>
     Edge<EdgeType> AdjGraph<EdgeType>::NextEdge(Edge<EdgeType> oneEdge) {
         Edge<EdgeType> tmpEdge;
         tmpEdge.start = oneEdge.start;
-        bool flag = false;
-        for (int i = tmpEdge.end + 1; i < this->vertexNum; ++i) {
+        tmpEdge.end = -1;
+        tmpEdge.weight = MYINFINITY;
+        for (int i = (oneEdge.end + 1); i < this->vertexNum; ++i) {
             if (matrix[oneEdge.start][i] != 0) {
                 tmpEdge.end = i;
-                tmpEdge.weight = matrix[oneEdge][i];
-                flag = true;
-                break;
+                tmpEdge.weight = matrix[oneEdge.start][i];
+                return tmpEdge;
             }
         }
-        if (flag) {
-            return tmpEdge;
-        }
-        throw "404 not found";
+        return tmpEdge;
     }
 
     template<class EdgeType>

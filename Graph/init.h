@@ -6,15 +6,25 @@
 #define WORKPLACE_INIT_H
 
 
-namespace Graph{
+namespace nGraph{
+
+    static int MYINFINITY = 1000;
+
+    typedef int VERTEXE;
+
     template <class EdgeType>
     class Edge;
 
     template <class EdgeType>
     class AdjGraph;
 
-    template <class EdgeTyp>
+    template <class EdgeType>
     class Graph;
+
+    template <class EdgeType>
+    class ListGraph;
+
+    void ListGraphTest();
 }
 
 

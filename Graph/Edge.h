@@ -12,7 +12,7 @@ namespace nGraph{
         EdgeType weight;
         Edge();
 
-        Edge(int st,int ed,int w);
+        Edge(int st,int ed,EdgeType w);
 
         bool operator>(Edge<EdgeType> oneEdge);
 
@@ -25,7 +25,7 @@ namespace nGraph{
     }
 
     template<class EdgeType>
-    Edge<EdgeType>::Edge(int st, int ed, int w) {
+    Edge<EdgeType>::Edge(int st, int ed, EdgeType w) {
         start = st;
         end = ed;
         weight = w;

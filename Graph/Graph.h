@@ -5,13 +5,13 @@
 #ifndef WORKPLACE_GRAPH_H
 #define WORKPLACE_GRAPH_H
 
-#include <cmath>
 #include "init.h"
 #include "Edge.h"
 #include <stack>
 #include <queue>
 
 namespace nGraph {
+
     template<class EdgeType>
     class Graph {
     protected:
@@ -27,7 +27,7 @@ namespace nGraph {
 
         ~Graph();
 
-        virtual Edge<EdgeType> FirstEdge(int oneVertex) = 0;
+        virtual Edge<EdgeType> FirstEdge(VERTEXE oneVertex) = 0;
 
         virtual Edge<EdgeType> NextEdge(Edge<EdgeType> oneEdge) = 0;
 
@@ -41,9 +41,9 @@ namespace nGraph {
 
         EdgeType Weight(Edge<EdgeType> oneEdge);
 
-        virtual void setEdge(int start, int end, EdgeType weight) = 0;
+        virtual void setEdge(VERTEXE start, VERTEXE end, EdgeType weight) = 0;
 
-        virtual void delEdge(int start, int end) = 0;
+        virtual void delEdge(VERTEXE start, VERTEXE end) = 0;
 
         void DFS(int v);
 
@@ -84,7 +84,7 @@ namespace nGraph {
 
     template<class EdgeType>
     bool Graph<EdgeType>::IsEdge(Edge<EdgeType> oneEdge) {
-        return oneEdge.weight > 0 && oneEdge.weight < INFINITY && oneEdge.end >= 0;
+        return oneEdge.weight > 0 && oneEdge.weight < MYINFINITY && oneEdge.end >= 0;
     }
 
     template<class EdgeType>
@@ -98,12 +98,13 @@ namespace nGraph {
     }
 
     template<class EdgeType>
-    void Graph<EdgeType>::DFS(int v) {
+    void Graph<EdgeType>::DFS(VERTEXE v) {
         using std::cout;
         using std::endl;
-        Mark[v] = VISITED;
-        cout << v << endl;
-
+        if(Mark[v]==UNVISITED){
+            Mark[v] = VISITED;
+            cout << v << endl;
+        }
         for (Edge<EdgeType> e = FirstEdge(v); IsEdge(e); e = NextEdge(e)) {
             if(Mark[e.end]==UNVISITED){
                 DFS(e.end);
@@ -118,22 +119,25 @@ namespace nGraph {
         using std::cout;
         using std::endl;
 
-        int v,u;
+        VERTEXE v,u;
 
         stack<int> s;
-        for (int j = 0; j < this->vertexNum; ++j) {
+        for (VERTEXE j = 0; j < this->vertexNum; ++j) {
             Mark[j] = UNVISITED;
         }
 
-        for (int i = 0; i < this->vertexNum; ++i) {
+        for (VERTEXE i = 0; i < this->vertexNum; ++i) {
             if(Mark[i]==UNVISITED){
                 s.push(i);
-                Mark[i] = VISITED;
                 while(!s.empty()){
                     v = s.top();
                     s.pop();
-                    cout<<v<<endl;
-                    for (Edge<EdgeType> e = FirstEdge(v); IsEdge(e) ; NextEdge(e)) {
+                    if(Mark[v]==UNVISITED){
+                        cout<<v<<endl;
+                        Mark[v]=VISITED;
+                    }
+
+                    for (Edge<EdgeType> e = FirstEdge(v); IsEdge(e) ; e = NextEdge(e)) {
                         u = e.end;
                         if(Mark[u]==UNVISITED){
                             s.push(u);
@@ -156,7 +160,7 @@ namespace nGraph {
 
         Q.push(0);
         while(!Q.empty()){
-            int u = Q.front();
+            VERTEXE u = Q.front();
             Q.pop();
             if(Mark[u]==UNVISITED){
                 cout<<u<<endl;
