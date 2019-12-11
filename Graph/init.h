@@ -12,19 +12,27 @@ namespace nGraph{
 
     typedef int VERTEXE;
 
-    template <class EdgeType>
+    template <class WeightType>
     class Edge;
 
-    template <class EdgeType>
+    template <class WeightType>
     class AdjGraph;
 
-    template <class EdgeType>
+    template <class WeightType>
     class Graph;
 
-    template <class EdgeType>
+    template <class WeightType>
     class ListGraph;
 
+    class UFSets;
+
     void ListGraphTest();
+
+    void AdjGraphTest();
+
+    void FloydTest();
+
+    void DijkstraTest();
 }
 
 
