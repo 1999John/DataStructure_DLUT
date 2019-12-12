@@ -104,6 +104,9 @@
 		<Unit filename="E:/C++project/workPlace/BinaryTree/ThreadTree.h">
 			<Option target="workPlace"/>
 		</Unit>
+		<Unit filename="E:/C++project/workPlace/CSorted.h">
+			<Option target="workPlace"/>
+		</Unit>
 		<Unit filename="E:/C++project/workPlace/Graph/AdjGraph.h">
 			<Option target="workPlace"/>
 		</Unit>
@@ -114,6 +117,9 @@
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/Graph/ListGraph.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/Graph/UFSets.h">
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/Graph/init.cpp">
@@ -150,6 +156,9 @@
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/LinearTable/singleList.h">
+			<Option target="workPlace"/>
+		</Unit>
+		<Unit filename="E:/C++project/workPlace/SortedTest.h">
 			<Option target="workPlace"/>
 		</Unit>
 		<Unit filename="E:/C++project/workPlace/binarytree.h">

@@ -35,7 +35,7 @@ class HuffmanTreeNode:
 class HuffmanTree:
 
     def __init__ ( self, seq=None,value_weight:list=None) -> None:
-        self.root: HuffmanTreeNode = HuffmanTreeNode(('Nan',0))
+        self.root: HuffmanTreeNode = HuffmanTreeNode(('NaN',0))
 
         if value_weight is None:
             self.value_weight = []
