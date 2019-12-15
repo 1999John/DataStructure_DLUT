@@ -36,6 +36,8 @@ namespace BinaryTree {
 
         T &operator[](Position pos);
 
+        bool empty();
+
     protected:
         T *heapArray;
         int currentSize;
@@ -89,6 +91,11 @@ namespace BinaryTree {
         T removeMin();
     };
 
+
+    template<class T>
+    bool Heap<T>::empty() {
+        return currentSize==0;
+    }
 
     template<class T>
     Heap<T>::Heap(T *arr, int num, int max) {

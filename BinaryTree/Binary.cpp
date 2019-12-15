@@ -8,9 +8,9 @@
 #include "Heap.h"
 #include "ThreadTree.h"
 
-namespace BinaryTree{
+namespace BinaryTree {
 
-    void SearchTreeTest(){
+    void SearchTreeTest() {
         SearchTree<int> st(10);
         st.insert(8);
         st.insert(15);
@@ -25,53 +25,53 @@ namespace BinaryTree{
         int leaf = 0;
         int oneChild = 0;
         int twoChild = 0;
-        st.noChild(st.getRoot(),&leaf);
-        st.oneChild(st.getRoot(),&oneChild);
-        st.twoChild(st.getRoot(),&twoChild);
+        st.noChild(st.getRoot(), &leaf);
+        st.oneChild(st.getRoot(), &oneChild);
+        st.twoChild(st.getRoot(), &twoChild);
 
-        std::cout<<"leaf\t"<<leaf<<"\toneChild\t"<<oneChild<<"\ttwoChild\t"<<twoChild<<std::endl;
+        std::cout << "leaf\t" << leaf << "\toneChild\t" << oneChild << "\ttwoChild\t" << twoChild << std::endl;
 
         int height = 0;
 
-        st.getHeight(st.getRoot(),&height);
-        std::cout<<"height\t"<<height<<std::endl;
+        st.getHeight(st.getRoot(), &height);
+        std::cout << "height\t" << height << std::endl;
 
         int width = 0;
-        st.getWidth(st.getRoot(),&width);
-        std::cout<<"width\t"<<width<<std::endl;
+        st.getWidth(st.getRoot(), &width);
+        std::cout << "width\t" << width << std::endl;
 
         int maxValue = 0;
-        st.getMax(st.getRoot(),&maxValue);
-        std::cout<<"max value\t"<<maxValue<<std::endl;
+        st.getMax(st.getRoot(), &maxValue);
+        std::cout << "max value\t" << maxValue << std::endl;
 
 //        st.exchange(st.getRoot());
         st.inOrder(st.getRoot());
 
         // st.deleteCurrentLeaf(st.getRoot(),NULL);
 
-        if(st.isCompleteBinaryTree()) {
-            std::cout<<"complete binary tree!"<<std::endl;
+        if (st.isCompleteBinaryTree()) {
+            std::cout << "complete binary tree!" << std::endl;
         }
     }
 
-    void AVLTreeTest(){
+    void AVLTreeTest() {
         using namespace std;
         AVLTree<int> avl;
         avl.insert(50);
         avl.insert(30);
         avl.insert(80);
         avl.inOrder(avl.getRoot());
-        cout<<endl;
+        cout << endl;
         avl.insert(20);
         avl.insert(10);
         avl.inOrder(avl.getRoot());
 
-        cout<<endl;
+        cout << endl;
         avl.insert(90);
         avl.insert(100);
         avl.insert(110);
         avl.inOrder(avl.getRoot());
-        cout<<endl;
+        cout << endl;
         avl.insert(105);
         avl.inOrder(avl.getRoot());
     }
@@ -85,17 +85,17 @@ namespace BinaryTree{
         tree.insert(18);
         tree.insert(6);
         tree.insert(9);
-        threadNode<int>* pre = NULL ;
-        tree.InThread(tree.getRoot(),pre);
+        threadNode<int> *pre = NULL;
+        tree.InThread(tree.getRoot(), pre);
         tree.InOrder(tree.getRoot());
     }
 
     void HeapTest() {
         using std::cout;
         using std::endl;
-        int arr[10] = {20,12,35,15,10,80,30,17,2,1};
-        Heap<int>* maxhp = new MaxHeap<int>(arr,10,20);
-        cout<<"the max heap"<<endl;
+        int arr[10] = {20, 12, 35, 15, 10, 80, 30, 17, 2, 1};
+        Heap<int> *maxhp = new MaxHeap<int>(arr, 10, 20);
+        cout << "the max heap" << endl;
         maxhp->display();
 //        maxhp->insert(90);
 //        cout<<endl;
@@ -103,8 +103,8 @@ namespace BinaryTree{
 //        maxhp->display();
 //        cout<<endl;
 
-        if(maxhp->remove(1)){
-            cout<<"suc"<<endl;
+        if (maxhp->remove(1)) {
+            cout << "suc" << endl;
         }
         maxhp->display();
 
