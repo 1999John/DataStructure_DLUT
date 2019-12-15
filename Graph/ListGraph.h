@@ -10,11 +10,11 @@
 #include "Edge.h"
 
 namespace nGraph {
-    template<class EdgeType>
+    template<class WeightType>
     class ListData {         // element
     public:
         VERTEXE vertex;
-        EdgeType weight;
+        WeightType weight=MYINFINITY;
     };
 
     template<class Elem>
@@ -26,6 +26,8 @@ namespace nGraph {
         ListNode(const Elem &elemval, ListNode<Elem> *nextval = NULL);
 
         ListNode(ListNode<Elem> *nextval = NULL);
+
+
     };
 
     template<class Elem>
@@ -68,42 +70,44 @@ namespace nGraph {
         removeAll();
     }
 
-    template<class EdgeType>
-    class ListGraph : public Graph<EdgeType> {
+    template<class WeightType>
+    class ListGraph : public Graph<WeightType> {
     private:
-        EdgeList<ListData<EdgeType>> *graList;
+        EdgeList<ListData<WeightType>> *graList;
     public:
         ListGraph(int verticesNum);
 
         ~ListGraph();
 
-        Edge<EdgeType> FirstEdge(VERTEXE oneVertex);
+        Edge<WeightType> FirstEdge(VERTEXE oneVertex);
 
-        Edge<EdgeType> NextEdge(Edge<EdgeType> oneEdge);
+        Edge<WeightType> NextEdge(Edge<WeightType> oneEdge);
 
-        void setEdge(VERTEXE start, VERTEXE end, EdgeType weight);
+        void setEdge(VERTEXE start, VERTEXE end, WeightType weight);
 
         void delEdge(VERTEXE start, VERTEXE end);
+
+        Edge<WeightType> getEdge(VERTEXE start, VERTEXE end) override;
     };
 
-    template<class EdgeType>
-    ListGraph<EdgeType>::ListGraph(int verticesNum):Graph<EdgeType>(verticesNum) {
-        graList = new EdgeList<ListData<EdgeType>>[this->vertexNum];
+    template<class WeightType>
+    ListGraph<WeightType>::ListGraph(int verticesNum):Graph<WeightType>(verticesNum) {
+        graList = new EdgeList<ListData<WeightType>>[this->vertexNum];
         for (VERTEXE i = 0; i < this->vertexNum; i++) {
             graList[i].head->element.vertex = i;
         }
     }
 
-    template<class EdgeType>
-    ListGraph<EdgeType>::~ListGraph() {
+    template<class WeightType>
+    ListGraph<WeightType>::~ListGraph() {
         delete[] graList;
     }
 
-    template<class EdgeType>
-    Edge<EdgeType> ListGraph<EdgeType>::FirstEdge(VERTEXE oneVertex) {
-        Edge<EdgeType> tmpEdge;
+    template<class WeightType>
+    Edge<WeightType> ListGraph<WeightType>::FirstEdge(VERTEXE oneVertex) {
+        Edge<WeightType> tmpEdge;
         tmpEdge.start = oneVertex;
-        ListNode<ListData<EdgeType>> *temp = graList[oneVertex].head;
+        ListNode<ListData<WeightType>> *temp = graList[oneVertex].head;
         if (temp->next != NULL) {
             tmpEdge.end = temp->next->element.vertex;
             tmpEdge.weight = temp->next->element.weight;
@@ -111,11 +115,11 @@ namespace nGraph {
         return tmpEdge;
     }
 
-    template<class EdgeType>
-    Edge<EdgeType> ListGraph<EdgeType>::NextEdge(Edge<EdgeType> oneEdge) {
-        Edge<EdgeType> tmpEdge;
+    template<class WeightType>
+    Edge<WeightType> ListGraph<WeightType>::NextEdge(Edge<WeightType> oneEdge) {
+        Edge<WeightType> tmpEdge;
         tmpEdge.start = oneEdge.start;
-        ListNode<ListData<EdgeType>> *temp = graList[oneEdge.start].head;
+        ListNode<ListData<WeightType>> *temp = graList[oneEdge.start].head;
         while (temp->next != NULL && temp->next->element.vertex <= oneEdge.end) {
             temp = temp->next;
         }
@@ -128,14 +132,14 @@ namespace nGraph {
         return tmpEdge;
     }
 
-    template<class EdgeType>
-    void ListGraph<EdgeType>::setEdge(VERTEXE start, VERTEXE end, EdgeType weight) {
-        ListNode<ListData<EdgeType>> *temp = graList[start].head;
+    template<class WeightType>
+    void ListGraph<WeightType>::setEdge(VERTEXE start, VERTEXE end, WeightType weight) {
+        ListNode<ListData<WeightType>> *temp = graList[start].head;
         while (temp->next != NULL && temp->next->element.vertex < end) {
             temp = temp->next;
         }
         if (temp->next == NULL) {
-            temp->next = new ListNode<ListData<EdgeType>>();
+            temp->next = new ListNode<ListData<WeightType>>();
             temp->next->element.vertex = end;
             temp->next->element.weight = weight;
             this->edgeNum++;
@@ -146,8 +150,8 @@ namespace nGraph {
             return;
         }
         if (temp->next->element.vertex > end) {
-            ListNode<ListData<EdgeType>> *other = temp->next;
-            temp->next = new ListNode<ListData<EdgeType>>();
+            ListNode<ListData<WeightType>> *other = temp->next;
+            temp->next = new ListNode<ListData<WeightType>>();
             temp->next->element.vertex = end;
             temp->next->element.weight = weight;
             temp->next->next = other;
@@ -155,18 +159,31 @@ namespace nGraph {
         }
     }
 
-    template<class EdgeType>
-    void ListGraph<EdgeType>::delEdge(VERTEXE start, VERTEXE end) {
-        ListNode<ListData<EdgeType>> *temp = graList[start].head;
+    template<class WeightType>
+    void ListGraph<WeightType>::delEdge(VERTEXE start, VERTEXE end) {
+        ListNode<ListData<WeightType>> *temp = graList[start].head;
         while (temp->next != NULL && temp->next->element.vertex < end) {
             temp = temp->next;
         }
         if (temp->next == NULL) return;
         if (temp->next->element.vertex == end) {
-            ListNode<ListData<EdgeType>> *other = temp->next->next;
+            ListNode<ListData<WeightType>> *other = temp->next->next;
             delete temp->next;
             temp->next = other;
             this->edgeNum--;
+        }
+    }
+
+    template<class WeightType>
+    Edge<WeightType> ListGraph<WeightType>::getEdge(VERTEXE start, VERTEXE end) {
+        Edge<WeightType> ret;
+        ret.start = start;
+        ret.end = end;
+        for (Edge<WeightType> e=FirstEdge(start) ; this->IsEdge(e) ; e=NextEdge(e)) {
+            if(e.end==end){
+                ret.weight = e.weight;
+                return ret;
+            }
         }
     }
 }

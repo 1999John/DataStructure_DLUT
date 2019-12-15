@@ -5,40 +5,64 @@
 #ifndef WORKPLACE_EDGE_H
 #define WORKPLACE_EDGE_H
 namespace nGraph{
-    template <class EdgeType>
+    template <class WeightType>
     class Edge{
     public:
         int start,end;
-        EdgeType weight;
+        WeightType weight;
         Edge();
 
-        Edge(int st,int ed,EdgeType w);
+        Edge(int st, int ed, WeightType w=MYINFINITY);
 
-        bool operator>(Edge<EdgeType> oneEdge);
+        bool operator>(Edge<WeightType> oneEdge);
 
-        bool operator<(Edge<EdgeType> oneEdge);
+        bool operator<(Edge<WeightType> oneEdge);
+
+        bool operator>=(Edge<WeightType> oneEdge);
+
+        bool operator<=(Edge<WeightType> oneEdge);
+
+        bool operator==(Edge<WeightType> oneEdge);
+
     };
 
-    template<class EdgeType>
-    Edge<EdgeType>::Edge() {
-        start = end= weight = 0;
+    template<class WeightType>
+    Edge<WeightType>::Edge() {
+        start = 0;
+        weight = MYINFINITY;
+        end = -1;
     }
 
-    template<class EdgeType>
-    Edge<EdgeType>::Edge(int st, int ed, EdgeType w) {
+    template<class WeightType>
+    Edge<WeightType>::Edge(int st, int ed, WeightType w) {
         start = st;
         end = ed;
         weight = w;
     }
 
-    template<class EdgeType>
-    bool Edge<EdgeType>::operator>(Edge<EdgeType> oneEdge) {
+    template<class WeightType>
+    bool Edge<WeightType>::operator>(Edge<WeightType> oneEdge) {
         return this->weight>oneEdge.weight;
     }
 
-    template<class EdgeType>
-    bool Edge<EdgeType>::operator<(Edge<EdgeType> oneEdge) {
+    template<class WeightType>
+    bool Edge<WeightType>::operator<(Edge<WeightType> oneEdge) {
         return this->weight<oneEdge.weight;
+    }
+
+    template<class WeightType>
+    bool Edge<WeightType>::operator>=(Edge<WeightType> oneEdge) {
+        return this->weight>=oneEdge.weight;
+    }
+
+    template<class WeightType>
+    bool Edge<WeightType>::operator<=(Edge<WeightType> oneEdge) {
+        return this->weight<=oneEdge.weight;
+    }
+
+    template<class WeightType>
+    bool Edge<WeightType>::operator==(Edge<WeightType> oneEdge) {
+        return this->weight==oneEdge.weight;
     }
 }
 
