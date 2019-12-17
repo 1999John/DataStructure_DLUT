@@ -70,4 +70,11 @@ void MergeSortTest() {
 }
 
 
+void RadixSortTest(){
+    int arr[10] = {520, 505, 321, 21, 71, 129, 708, 524, 100, 6};
+    RadixSort(arr,10);
+    visit(arr,10);
+}
+
+
 #endif //WORKPLACE_SORTEDTEST_H

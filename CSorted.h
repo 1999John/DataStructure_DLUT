@@ -5,14 +5,16 @@
 #ifndef WORKPLACE_CSORTED_H
 #define WORKPLACE_CSORTED_H
 
+#include <queue>
+#include <cmath>
 
 template<class T>
-bool lt(T a, T b) {
+bool lt(T a, T b) {             //降序排列
     return a < b;
 }
 
 template<class T>
-bool gt(T a, T b) {
+bool gt(T a, T b) {             //升序排列
     return a > b;
 }
 
@@ -24,8 +26,8 @@ void swap(T *a, T *b) {
     return;
 }
 
-template <class T>
-void initArr(T Arr[],int n){
+template<class T>
+void initArr(T Arr[], int n) {
     for (int i = 0; i < n; ++i) {
         Arr[i] = 0;
     }
@@ -112,17 +114,13 @@ template<class T>
 int Partition2(T Arr[], int first, int last, bool (*cmp)(T, T)) {
     int low = first, high = last - 1;
     T pivot = Arr[low];
-    while (low <= high) {
+    while (low < high) {
         while (low < high && !cmp(pivot, Arr[high]))
             high--;
-        if (low >= high) break;         //当low和high相遇时退出
         Arr[low] = Arr[high];
-        low++;
         while (low < high && cmp(pivot, Arr[low]))
             low++;
-        if (low >= high) break;         // 当low和high相遇时退出
         Arr[high] = Arr[low];
-        --high;
     }
     Arr[low] = pivot;
     return low;
@@ -138,65 +136,115 @@ void QuickSort1(T Arr[], int low, int high, bool (*cmp)(T, T)) {
     }
 }
 
-template <class T>
+template<class T>
 void QuickSort2(T Arr[], int left, int right, bool (*cmp)(T, T)) {
-    if(right<=left){     //子序列只有0个或一个记录
+    if (right <= left) {     //子序列只有0个或一个记录
         return;
     }
-    int pivot =left;
-    pivot = Partition2(Arr,left,right,cmp);
-    QuickSort2(Arr,left,pivot,cmp);
-    QuickSort2(Arr,pivot+1,right,cmp);
+    int pivot = left;
+    pivot = Partition2(Arr, left, right, cmp);
+    QuickSort2(Arr, left, pivot, cmp);
+    QuickSort2(Arr, pivot + 1, right, cmp);
 }
 
-template <class T>
-void SelectSort(T Arr[],int length,bool (*cmp)(T,T)) {
-    for (int i = 0; i < length-1; ++i) {
+template<class T>
+void SelectSort(T Arr[], int length, bool (*cmp)(T, T)) {
+    for (int i = 0; i < length - 1; ++i) {
         int anchor = i;
-        for (int j = i+1; j < length; ++j) {
-            if(cmp(Arr[anchor], Arr[j])) anchor=j;
+        for (int j = i + 1; j < length; ++j) {
+            if (cmp(Arr[anchor], Arr[j])) anchor = j;
         }
-        if(anchor != i) swap(&Arr[anchor], &Arr[i]);
+        if (anchor != i) swap(&Arr[anchor], &Arr[i]);
     }
 }
 
 template <class T>
-void MergeSort(T Arr[],T sideArr[],int left,int right,bool (*cmp)(T,T)) {
-    if(right-left>2){
-        int mid = (right+left)/2;
-        int leftlength = mid-left;
-        int rightlength = right-mid;
+void Merge(T arr[],T arr1[],T arr2[],int length1,int length2,bool (*cmp)(T,T)){
+    int m = 0, i = 0, j = 0;
+    while (i < length1 && j < length2) {
+        arr[m++] = cmp(arr1[i], arr2[j]) ? arr2[j++] : arr1[i++];
+    }
+    while (i < length1) {
+        arr[m++] =arr1[i++];
+    }
+    while (j < length2) {
+        arr[m++] = arr2[j++];
+    }
+}
+
+template<class T>
+void MergeSort(T Arr[], T sideArr[], int left, int right, bool (*cmp)(T, T)) {
+    if (right - left > 2) {
+        int mid = (right + left) / 2;
+        int leftlength = mid - left;
+        int rightlength = right - mid;
         T leftArr[leftlength];
         T rightArr[rightlength];
-        initArr(leftArr,leftlength);
-        initArr(rightArr,rightlength);
-        MergeSort(Arr,leftArr,left,mid,cmp);
-        MergeSort(Arr,rightArr,mid,right,cmp);
+        initArr(leftArr, leftlength);
+        initArr(rightArr, rightlength);
+        MergeSort(Arr, leftArr, left, mid, cmp);
+        MergeSort(Arr, rightArr, mid, right, cmp);
+        Merge(sideArr,leftArr,rightArr,leftlength,rightlength,cmp);
 
-        int m = 0,i=0,j=0;
-        while(i<leftlength&&j<rightlength){
-            sideArr[m++] = cmp(leftArr[i],rightArr[j])?rightArr[j++]:leftArr[i++];
-        }
-        while(i<leftlength){
-            sideArr[m++] = leftArr[i++];
-        }
-        while(j<rightlength){
-            sideArr[m++] = rightArr[j++];
-        }
-    } else if (right-left==2){
-        if(!cmp(Arr[--right],Arr[left]))        //right>left
+    } else if (right - left == 2) {
+        if (!cmp(Arr[--right], Arr[left]))        //right>left
         {
             sideArr[0] = Arr[right];
             sideArr[1] = Arr[left];
             return;
-        }else{
+        } else {
             sideArr[0] = Arr[left];
             sideArr[1] = Arr[right];
         }
 
-    }else{
+    } else {
         sideArr[0] = Arr[left];
         return;
     }
 }
+
+template <class T>
+int maxd(T Arr[],int n){
+    int d = 1;
+    int p = 1;
+    int pre=0;
+    for (int i = 0; i < n; ++i) {
+        while(Arr[i]>p){
+            p*=10;
+            pre++;
+        }
+        if(pre>d){
+            d = pre;
+        }
+        pre= 0;
+    }
+    return d;
+}
+
+
+template <class T>
+void mergeArrAndQueue(T Arr[],std::queue<T> QList[],int length){
+    int m = 0;
+    for (int i = 0; i < length; ++i) {
+        while(!QList[i].empty()){
+            Arr[m++] = QList[i].front();
+            QList[i].pop();
+        }
+    }
+}
+
+template <class T>
+void RadixSort(T Arr[],int length){
+    using std::queue;
+    using namespace std;
+    queue<int> Qlist[10];
+    int d = maxd(Arr,length);
+    for (int i = 0; i < d; ++i) {
+        for (int j = 0; j < length; ++j) {
+            Qlist[(Arr[j]/int(pow(10,i+1)))%10].push(Arr[j]);
+        }
+        mergeArrAndQueue(Arr,Qlist,length);
+    }
+}
+
 #endif //WORKPLACE_CSORTED_H
