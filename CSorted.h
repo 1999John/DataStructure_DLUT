@@ -33,6 +33,7 @@ void initArr(T Arr[], int n) {
     }
 }
 
+//希尔排序
 template<class T>
 void ShellSort(T Arr[], int len, bool (*cmp)(T, T)) {
     int gap = len / 2;
@@ -50,6 +51,7 @@ void ShellSort(T Arr[], int len, bool (*cmp)(T, T)) {
     }
 }
 
+//直接插入
 template<class T>
 void InsertSort(T Arr[], int len, bool (*cmp)(T, T)) {
     for (int i = 1; i < len; ++i) {
@@ -63,6 +65,8 @@ void InsertSort(T Arr[], int len, bool (*cmp)(T, T)) {
     }
 }
 
+
+//二分插入
 template<class T>
 void BinaryInsertSort(T Arr[], int len, bool (*cmp)(T, T)) {
     for (int i = 1; i < len; ++i) {
@@ -86,12 +90,18 @@ void BinaryInsertSort(T Arr[], int len, bool (*cmp)(T, T)) {
 
 template<class T>
 void BubbleSort(T Arr[], int len, bool (*cmp)(T, T)) {
+    int flag = true;
     for (int i = 0; i < len; ++i) {
         for (int j = 0; j < len - 1 - i; ++j) {
             if (cmp(Arr[j], Arr[j + 1])) {
                 swap(&Arr[j], &Arr[j + 1]);
+                flag = false;
             }
         }
+        if (flag) {           //已经稳定就可以跳转
+            return;
+        }
+        flag = true;
     }
 }
 
@@ -126,6 +136,7 @@ int Partition2(T Arr[], int first, int last, bool (*cmp)(T, T)) {
     return low;
 }
 
+// 基于第一种分割策略的快速排序
 template<class T>
 void QuickSort1(T Arr[], int low, int high, bool (*cmp)(T, T)) {
     int piovt;
@@ -136,6 +147,8 @@ void QuickSort1(T Arr[], int low, int high, bool (*cmp)(T, T)) {
     }
 }
 
+
+//基于第二种分割策略的快速排序
 template<class T>
 void QuickSort2(T Arr[], int left, int right, bool (*cmp)(T, T)) {
     if (right <= left) {     //子序列只有0个或一个记录
@@ -147,6 +160,8 @@ void QuickSort2(T Arr[], int left, int right, bool (*cmp)(T, T)) {
     QuickSort2(Arr, pivot + 1, right, cmp);
 }
 
+
+//选择排序
 template<class T>
 void SelectSort(T Arr[], int length, bool (*cmp)(T, T)) {
     for (int i = 0; i < length - 1; ++i) {
@@ -158,20 +173,23 @@ void SelectSort(T Arr[], int length, bool (*cmp)(T, T)) {
     }
 }
 
-template <class T>
-void Merge(T arr[],T arr1[],T arr2[],int length1,int length2,bool (*cmp)(T,T)){
+
+//合并排序
+template<class T>
+void Merge(T arr[], T arr1[], T arr2[], int length1, int length2, bool (*cmp)(T, T)) {
     int m = 0, i = 0, j = 0;
     while (i < length1 && j < length2) {
         arr[m++] = cmp(arr1[i], arr2[j]) ? arr2[j++] : arr1[i++];
     }
     while (i < length1) {
-        arr[m++] =arr1[i++];
+        arr[m++] = arr1[i++];
     }
     while (j < length2) {
         arr[m++] = arr2[j++];
     }
 }
 
+//合并排序
 template<class T>
 void MergeSort(T Arr[], T sideArr[], int left, int right, bool (*cmp)(T, T)) {
     if (right - left > 2) {
@@ -184,7 +202,7 @@ void MergeSort(T Arr[], T sideArr[], int left, int right, bool (*cmp)(T, T)) {
         initArr(rightArr, rightlength);
         MergeSort(Arr, leftArr, left, mid, cmp);
         MergeSort(Arr, rightArr, mid, right, cmp);
-        Merge(sideArr,leftArr,rightArr,leftlength,rightlength,cmp);
+        Merge(sideArr, leftArr, rightArr, leftlength, rightlength, cmp);
 
     } else if (right - left == 2) {
         if (!cmp(Arr[--right], Arr[left]))        //right>left
@@ -195,55 +213,56 @@ void MergeSort(T Arr[], T sideArr[], int left, int right, bool (*cmp)(T, T)) {
         } else {
             sideArr[0] = Arr[left];
             sideArr[1] = Arr[right];
+            return;
         }
-
     } else {
         sideArr[0] = Arr[left];
         return;
     }
 }
 
-template <class T>
-int maxd(T Arr[],int n){
+
+//基数排序部分
+template<class T>
+int maxd(T Arr[], int n) {            //求最大的位数
     int d = 1;
     int p = 1;
-    int pre=0;
+    int pre = 0;
     for (int i = 0; i < n; ++i) {
-        while(Arr[i]>p){
-            p*=10;
+        while (Arr[i] > p) {
+            p *= 10;
             pre++;
         }
-        if(pre>d){
+        if (pre > d) {
             d = pre;
         }
-        pre= 0;
+        pre = 0;
     }
     return d;
 }
 
 
-template <class T>
-void mergeArrAndQueue(T Arr[],std::queue<T> QList[],int length){
+template<class T>
+void mergeArrAndQueue(T Arr[], std::queue<T> QList[], int length) {
     int m = 0;
     for (int i = 0; i < length; ++i) {
-        while(!QList[i].empty()){
+        while (!QList[i].empty()) {
             Arr[m++] = QList[i].front();
             QList[i].pop();
         }
     }
 }
 
-template <class T>
-void RadixSort(T Arr[],int length){
+template<class T>
+void RadixSort(T Arr[], int length) {
     using std::queue;
-    using namespace std;
     queue<int> Qlist[10];
-    int d = maxd(Arr,length);
+    int d = maxd(Arr, length);
     for (int i = 0; i < d; ++i) {
         for (int j = 0; j < length; ++j) {
-            Qlist[(Arr[j]/int(pow(10,i+1)))%10].push(Arr[j]);
+            Qlist[(Arr[j] / int(pow(10, i + 1))) % 10].push(Arr[j]);
         }
-        mergeArrAndQueue(Arr,Qlist,length);
+        mergeArrAndQueue(Arr, Qlist, length);
     }
 }
 
