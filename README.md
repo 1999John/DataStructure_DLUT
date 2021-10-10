@@ -4,7 +4,7 @@ author:John Xu
 
 微信：（别看了，就你了，加我微信）
 
-![](\Interesting\weixin.png)
+![](https://github.com/1999John/DataStructure_DLUT/blob/master/Interesting/weixin.png?raw=true)
 
 QQ:1808212297
 
