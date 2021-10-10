@@ -1,3 +1,0 @@
-C:\Users\ThinkPad\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.5233.144\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\workPlace.dir/objects.a
-F:\CodeBlocks\MinGW\bin\ar.exe cr CMakeFiles\workPlace.dir/objects.a @CMakeFiles\workPlace.dir\objects1.rsp
-F:\CodeBlocks\MinGW\bin\mingw32-g++.exe -g   -Wl,--whole-archive CMakeFiles\workPlace.dir/objects.a -Wl,--no-whole-archive  -o workPlace.exe -Wl,--out-implib,libworkPlace.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\workPlace.dir\linklibs.rsp
